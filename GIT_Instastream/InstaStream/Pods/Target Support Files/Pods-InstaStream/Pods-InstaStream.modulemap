@@ -1,0 +1,6 @@
+framework module Pods_InstaStream {
+  umbrella header "Pods-InstaStream-umbrella.h"
+
+  export *
+  module * { export * }
+}
