@@ -244,8 +244,8 @@ class LiveVideoViewController: UIViewController {
         pathURL = self.reqUrl! as NSURL
         guard let videoData = try? Data(contentsOf: pathURL as URL) as NSData else{return}
         
-        let videoObject: [String : AnyObject] = ["title" : "from InstaStream-\(BaseClass.shared().getCurrentTime())" as AnyObject, "description": "" as AnyObject, pathURL.absoluteString!: videoData]
-        let uploadRequest:FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "295356941001509/videos", parameters: videoObject, httpMethod: "POST")
+        let videoObject: [String : AnyObject] = ["title" : "InstaStream-\(BaseClass.shared().getCurrentTime())" as AnyObject, "description": "" as AnyObject, pathURL.absoluteString!: videoData]
+        let uploadRequest:FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "435302756843819/videos", parameters: videoObject, httpMethod: "POST")
         // self.view!.userInteractionEnabled = false
         _ = uploadRequest.start { (_, result, error) in
             if error == nil {
