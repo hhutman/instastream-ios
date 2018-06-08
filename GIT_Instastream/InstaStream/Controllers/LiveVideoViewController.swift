@@ -376,7 +376,7 @@ class LiveVideoViewController: UIViewController {
         // session.saveLocalVideo = true
         //        session.saveLocalVideoPath = reqUrl
         liveStreamingView.addSubview(containerView)
-        containerView.addSubview(stateLabel)
+      //  containerView.addSubview(stateLabel)
         // DispatchQueue.main.async {
         //            self.startLiveStreaming()
         //}

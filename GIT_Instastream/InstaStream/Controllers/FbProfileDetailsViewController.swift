@@ -51,7 +51,8 @@ class FbProfileDetailsViewController: UIViewController {
             self.startInstaStream?.alpha = 1
             self.startInstaStream?.isUserInteractionEnabled = true
         case .wwan:
-            view.backgroundColor = .yellow
+            print("")
+            //view.backgroundColor = .yellow
         }
         print("Reachability Summary")
         print("Status:", status)
