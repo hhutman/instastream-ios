@@ -2,8 +2,8 @@
 //  LiveVideoViewController.swift
 //  InstaStream
 //
-//  Created by Rapid Dev on 05/05/18.
-//  Copyright © 2018 Rapid Dev. All rights reserved.
+//  Created by prasanth inavolu on 05/05/18.
+//  Copyright © 2018 prasanth inavolu. All rights reserved.
 //
 
 import UIKit
@@ -23,15 +23,15 @@ class LiveVideoViewController: UIViewController {
     @IBOutlet weak var stopLiveButton : UIButton!
     @IBOutlet weak var pauseBtn : UIButton!
     @IBOutlet weak var lblMessage : UILabel?
-
+    
     var fbStreamingId : String!
     var reqUrl : URL?
-//    var livePrivacy: FBLivePrivacy = .everyone
+    //    var livePrivacy: FBLivePrivacy = .everyone
     var livePrivacy: FBLivePrivacy!
-
+    
     let imagesCount = BaseClass.sharedInstance.selectedImages
     let appDelegate : AppDelegate = UIApplication.shared.delegate as! AppDelegate
-
+    
     var pictureInput : GPUImagePicture!
     var streamImagesHelper : StreamImagesHelper!
     var moviewWriter : GPUImageMovieWriter!
@@ -40,27 +40,26 @@ class LiveVideoViewController: UIViewController {
     var fbCommentsModelObj : FBCommentsModel!
     var fbCommentsModelArr : [FBCommentsModel]!
     var currentTime : String = ""
-  //  var session : LFLiveSession!
+    //  var session : LFLiveSession!
     var alertResult : ((Bool) -> Void)?
     var timeEnded : Bool = false
-
+    var uploadFailed : Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         makeCornerRadius()
         self.playLiveButton.isHidden = true
         NotificationCenter.default.addObserver(self, selector: #selector(statusManager), name: .flagsChanged, object: Network.reachability)
-//        if !FBSDKAccessToken.current().hasGranted("publish_actions") {
-//            fbLogin()
-//        }else{
-//            loadLFLiveKitView()
-//        }
+        //        if !FBSDKAccessToken.current().hasGranted("publish_actions") {
+        //            fbLogin()
+        //        }else{
+        //            loadLFLiveKitView()
+        //        }
         updateUserInterface()
         startLiveVideoTimer()
         self.playLiveButton.isUserInteractionEnabled = false
         self.finishButton.isUserInteractionEnabled = false
         self.pauseBtn.isUserInteractionEnabled = false
-        //showAlertForSizeExcess()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -101,35 +100,56 @@ class LiveVideoViewController: UIViewController {
     
     func moveToPreviousScreen() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            let viewcontrollers = self.navigationController?.viewControllers
-            viewcontrollers?.forEach({ (vc) in
-                if  let galleryVC = vc as? GalleryViewController {
-                    self.navigationController!.popToViewController(galleryVC, animated: true)
+            guard let viewcontrollers = self.navigationController?.viewControllers else{return}
+            for controller in viewcontrollers {
+                if  let galleryVC = controller as? GalleryViewController {
+                    self.navigationController?.popToViewController(galleryVC, animated: true)
                 }
-            })
+            }
+            //            let viewcontrollers = self.navigationController?.viewControllers
+            //            viewcontrollers?.forEach({ (vc) in
+            //                if  let galleryVC = vc as? GalleryViewController {
+            //                    self.navigationController!.popToViewController(galleryVC, animated: true)
+            //                }
+            //            })
         }
     }
     
     func startLiveVideoTimer()
     {
+        //        self.view.alpha = 0.3
+        //        let liveStartViCo = UIStoryboard.liveStreamTimer()
+        //        liveStartViCo.timerResult = { (result) in
+        //            if result {
+        //                self.dismiss(animated: true, completion: nil)
+        //                self.view.alpha = 1
+        //                if !FBSDKAccessToken.current().hasGranted("publish_actions") {
+        //                    self.fbLogin()
+        //                }else{
+        //                    self.loadLFLiveKitView()
+        //                }
+        //            }
+        //        }
+        //        self.navigationController?.present(liveStartViCo, animated: true, completion: nil)
+        
+        if !FBSDKAccessToken.current().hasGranted("publish_actions") {
+            self.fbLogin()
+        }else{
+            //            self.loadLFLiveKitView()
+            self.moveToLiveViewTimer()
+        }
+        
+    }
+    
+    func moveToLiveViewTimer() {
         self.view.alpha = 0.3
         let liveStartViCo = UIStoryboard.liveStreamTimer()
-        liveStartViCo.timerResult = { (result) in
-            if result {
-                self.dismiss(animated: true, completion: nil)
-                self.view.alpha = 1
-                if !FBSDKAccessToken.current().hasGranted("publish_actions") {
-                    self.fbLogin()
-                }else{
-                    self.loadLFLiveKitView()
-                }
-            }
-        }
         self.navigationController?.present(liveStartViCo, animated: true, completion: nil)
+        self.loadLFLiveKitView()
     }
     
     @IBAction func finishTapped(_ sender: Any) {
-
+        
         let alertViewCo = UIStoryboard.alertView()
         alertViewCo.alertResult = { (result) in
             if result {
@@ -161,13 +181,15 @@ class LiveVideoViewController: UIViewController {
         // self.session = nil
         uploadVideo(videoUrl: self.reqUrl!)
         //self.showAlertForUser()
-
-       // self.moveToBroadcastsScreen()
-//        let fileSize = BaseClass.shared().getFileSizeWithUrl(url: self.reqUrl)
-//        print("file size is \(fileSize)")
+        
+        // self.moveToBroadcastsScreen()
+        //        let fileSize = BaseClass.shared().getFileSizeWithUrl(url: self.reqUrl)
+        //        print("file size is \(fileSize)")
     }
     
     func uploadVideo(videoUrl : URL) {
+        let size = BaseClass.shared().getFileSizeWithUrl(url: videoUrl)
+        print("FILE SIZE from uploadvideo is \(size)")
         self.view.alpha = 0.3
         var bodyDict = [String : Any]()
         currentTime = "\(BaseClass.shared().userName!)\(BaseClass.shared().getCurrentTime())"
@@ -178,21 +200,23 @@ class LiveVideoViewController: UIViewController {
                 print(result as Any)
                 let status = String.giveMeProperString(str: result?[Constants.KEY_STATUS]!)
                 if(status == Constants.VALUE_STATUS_OK){
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    DispatchQueue.main.async {
                         self.showToastWithMessage(strMessage: "Broadcast Video added succesfully")
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                         if let controller2 = self.navigationController {
                             Spinner.hide(controller: controller2)
                         }
-                        if self.timeEnded {
-                            self.showAlertForUser()
-                        }else{
-                            self.moveToBroadcastsScreen()
-                        }
+                        //                        if self.timeEnded {
+                        //                            self.showAlertForUser()
+                        //                        }else{
+                        self.moveToBroadcastsScreen()
+                        //   }
                     }
                 }
             }
             else if((error) != nil) || (error == nil) {
-
+                
                 DispatchQueue.main.async {
                     if let controller2 = self.navigationController {
                         Spinner.hide(controller: controller2)
@@ -216,8 +240,8 @@ class LiveVideoViewController: UIViewController {
     func showAlertForUser() {
         let alertCo = UIAlertController(title: "LIVE UPDATE", message: "Live streaming time has ended", preferredStyle: .alert)
         let btnOk = UIAlertAction(title: "OK", style: .default) { (_) in
-            // self.stopLiveStreaming()
-            self.moveToBroadcastsScreen()
+            self.stopLiveStreaming()
+            // self.moveToBroadcastsScreen()
         }
         alertCo.addAction(btnOk)
         self.present(alertCo, animated: true, completion: nil)
@@ -225,14 +249,26 @@ class LiveVideoViewController: UIViewController {
     
     func showAlertForSizeExcess() {
         self.view.alpha = 0.3
+        uploadFailed = true
+        let size = BaseClass.shared().getFileSizeWithUrl(url: self.reqUrl!)
+        print("FILE SIZE from showAlertForSizeExcess is \(size)")
         let alertCo = UIAlertController(title: "Error", message: "Video file size exceeded", preferredStyle: .alert)
         let btnOk = UIAlertAction(title: "OK", style: .default) { (_) in
-            let viewcontrollers = self.navigationController?.viewControllers
-            viewcontrollers?.forEach({ (vc) in
-                if  let galleryVC = vc as? GalleryViewController {
-                    self.navigationController!.popToViewController(galleryVC, animated: true)
-                }
-            })
+            
+            
+            self.moveToBroadcastsScreen()
+            // let viewcontrollers = self.navigationController?.viewControllers
+//            guard let viewcontrollers = self.navigationController?.viewControllers else{return}
+//            for controller in viewcontrollers {
+//                if  let galleryVC = controller as? GalleryViewController {
+//                    self.navigationController?.popToViewController(galleryVC, animated: true)
+//                }
+//            }
+            //            viewcontrollers?.forEach({ (vc) in
+            //                if  let galleryVC = vc as? GalleryViewController {
+            //                    self.navigationController!.popToViewController(galleryVC, animated: true)
+            //                }
+            //            })
         }
         alertCo.addAction(btnOk)
         self.present(alertCo, animated: true, completion: nil)
@@ -245,7 +281,7 @@ class LiveVideoViewController: UIViewController {
         guard let videoData = try? Data(contentsOf: pathURL as URL) as NSData else{return}
         
         let videoObject: [String : AnyObject] = ["title" : "InstaStream-\(BaseClass.shared().getCurrentTime())" as AnyObject, "description": "" as AnyObject, pathURL.absoluteString!: videoData]
-        let uploadRequest:FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "435302756843819/videos", parameters: videoObject, httpMethod: "POST")
+        let uploadRequest:FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "295356941001509/videos", parameters: videoObject, httpMethod: "POST")
         // self.view!.userInteractionEnabled = false
         _ = uploadRequest.start { (_, result, error) in
             if error == nil {
@@ -262,6 +298,7 @@ class LiveVideoViewController: UIViewController {
         postVideoToPage()
         let broadCastViewCo = UIStoryboard.broadScreen()
         broadCastViewCo.videoURL = self.reqUrl! as NSURL
+        broadCastViewCo.uploadFailed = uploadFailed
         broadCastViewCo.streamUrlTime = String.giveMeProperString(str: self.currentTime)
         print("video url is \(self.reqUrl!)")
         self.reqUrl = nil
@@ -276,7 +313,7 @@ class LiveVideoViewController: UIViewController {
             accessToken = FBSDKAccessToken.current().tokenString
         }
         let path = "\(id)/comments"
-
+        
         let params = ["fields":"from,message,name","access_token": accessToken]
         let request = FBSDKGraphRequest(
             graphPath: path,
@@ -285,7 +322,7 @@ class LiveVideoViewController: UIViewController {
             version : "v3.0",
             httpMethod: "GET"
         )
-
+        
         _ = request?.start { (_, result, error) in
             if error == nil {
                 let dict = result as! [String : AnyObject]
@@ -309,7 +346,7 @@ class LiveVideoViewController: UIViewController {
         self.finishButton.layer.cornerRadius = 10
         self.finishButton.clipsToBounds = true
     }
-
+    
     //LFLIVEKIT code
     func loadLFLiveKitView() {
         let documentsPath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
@@ -327,23 +364,23 @@ class LiveVideoViewController: UIViewController {
         }catch{
             print("Not Removed")
         }
-
+        
         session.saveLocalVideo = true
         session.saveLocalVideoPath = reqUrl
         session.delegate = self
         session.preView = liveStreamingView
-//        self.session.running = false
+        //        self.session.running = false
         self.streamImagesHelper = StreamImagesHelper.init(session: session, images: BaseClass.shared().selectedImages)
         self.requestAccessForVideo()
         self.requestAccessForAudio()
-       // session.saveLocalVideo = true
-//        session.saveLocalVideoPath = reqUrl
+        // session.saveLocalVideo = true
+        //        session.saveLocalVideoPath = reqUrl
         liveStreamingView.addSubview(containerView)
         containerView.addSubview(stateLabel)
-       // DispatchQueue.main.async {
-//            self.startLiveStreaming()
+        // DispatchQueue.main.async {
+        //            self.startLiveStreaming()
         //}
-       // fbLogin()
+        // fbLogin()
     }
     
     func saveSession() {
@@ -359,10 +396,10 @@ class LiveVideoViewController: UIViewController {
                 self.playLiveButton.isUserInteractionEnabled = true
                 self.finishButton.isUserInteractionEnabled = true
                 self.pauseBtn.isUserInteractionEnabled = true
-//                if let _ = (((result as? NSDictionary)?.value(forKey: "body") as AnyObject).value(forKey: "error") as AnyObject).value(forKey: "message") as? String {
-//                    self.showToastWithMessage(strMessage: "problem occured while streaming")
-//                    return
-//                }
+                //                if let _ = (((result as? NSDictionary)?.value(forKey: "body") as AnyObject).value(forKey: "error") as AnyObject).value(forKey: "message") as? String {
+                //                    self.showToastWithMessage(strMessage: "problem occured while streaming")
+                //                    return
+                //                }
                 guard let streamUrlString = (result as? NSDictionary)?.value(forKey: "stream_url") as? String else {
                     self.showToastWithMessage(strMessage: "problem occured while streaming")
                     return
@@ -383,7 +420,8 @@ class LiveVideoViewController: UIViewController {
                 self.getCommentsFromFB(id: self.fbStreamingId)
                 self.timerObj = Timer.scheduledTimer(withTimeInterval: 75, repeats: false, block: { (_) in
                     self.timeEnded = true
-                    self.stopLiveStreaming()
+                    // self.stopLiveStreaming()
+                    self.showAlertForUser()
                 })
                 self.commentsTimerObj = Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: { (_) in
                     self.getCommentsFromFB(id: self.fbStreamingId)
@@ -539,8 +577,9 @@ class LiveVideoViewController: UIViewController {
                 print("Cancelled")
             } else {
                 print("Logged in")
-               // self.startLiveStreaming()
-                self.loadLFLiveKitView()
+                // self.startLiveStreaming()
+                //self.loadLFLiveKitView()
+                self.moveToLiveViewTimer()
             }
         }
     }
@@ -574,10 +613,10 @@ class LiveVideoViewController: UIViewController {
     fileprivate func showEmptyMessage(count : Int){
         lblMessage?.text = ""
         if count == 0{
-            lblMessage?.text = Constants.MSG_NO_RESULTS
+            lblMessage?.text = "No comments yet"
         }
     }
-
+    
 }
 
 extension LiveVideoViewController : UICollectionViewDelegate,UICollectionViewDataSource {
@@ -624,16 +663,16 @@ extension LiveVideoViewController : LFLiveSessionDelegate {
     
     func liveSessionCapturedFrame(_ session: LFLiveSession?) {
         if (self.streamImagesHelper != nil) {
-         //   print("CHECK PRASHANTH is liveSessionCapturedFrame")
+            //   print("CHECK PRASHANTH is liveSessionCapturedFrame")
             self.streamImagesHelper.transformCurrentImage()
         }
     }
-
+    
     func liveSession(_ session: LFLiveSession?, debugInfo: LFLiveDebug?) {
         //print("CHECK PRASHANTH")
         //print("debugInfo: \(String(describing: debugInfo?.currentBandwidth))")
         //self.pictureInput.processImage()
-      //  streamImagesHelper.initFilters(with: <#T##UIImage!#>)
+        //  streamImagesHelper.initFilters(with: <#T##UIImage!#>)
     }
     
     func liveSession(_ session: LFLiveSession?, errorCode: LFLiveSocketErrorCode) {
@@ -651,6 +690,8 @@ extension LiveVideoViewController : LFLiveSessionDelegate {
             break;
         case LFLiveState.start:
             stateLabel.text = "connected"
+            self.dismiss(animated: true, completion: nil)
+            self.view.alpha = 1
             self.showToastWithMessage(strMessage: "Connected")
             break;
         case LFLiveState.error:

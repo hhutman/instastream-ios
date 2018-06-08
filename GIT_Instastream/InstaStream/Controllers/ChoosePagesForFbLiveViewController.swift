@@ -88,7 +88,10 @@ class ChoosePagesForFbLiveViewController: UIViewController {
     }
     
     @IBAction func nextTapped(_ sender: Any) {
-        showPrivacyOptions()
+       // showPrivacyOptions()
+        self.privacySelected = .everyone
+        self.moveToLivePage()
+
     }
     
     func moveToLivePage() {

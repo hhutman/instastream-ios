@@ -25,18 +25,20 @@ class LiveStreamTimerViewController: UIViewController {
 
     func LoadLiveStartTimer() {
         timerView.layer.cornerRadius = 8
-        timerTime.layer.masksToBounds = true
-        timerTime.layer.cornerRadius = timerTime.layer.frame.size.height/2
-        self.startLiveTimer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true, block: { (_) in
-            if self.liveCount == 0 {
-                self.startLiveTimer.invalidate()
-                self.timerResult!(true)
-             //   self.timerView.isHidden = true
-            }else{
-                self.timerTime.text = "\(self.liveCount)"
-                self.liveCount = self.liveCount - 1
-            }
-        })
+        // timerTime.layer.masksToBounds = true
+        //  timerTime.layer.cornerRadius = timerTime.layer.frame.size.height/2
+        self.timerTime.text = "Connecting ..."
+        
+        //        self.startLiveTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
+        //            if self.liveCount == 0 {
+        //                self.startLiveTimer.invalidate()
+        //                self.timerResult!(true)
+        //             //   self.timerView.isHidden = true
+        //            }else{
+        //                self.timerTime.text = "\(self.liveCount)"
+        //                self.liveCount = self.liveCount - 1
+        //            }
+        //        })
     }
 
 }

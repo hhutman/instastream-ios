@@ -23,9 +23,14 @@ class BroadCastViewController: UIViewController {
     var broadCastModelObj : BroadcastsModel?
     var broadCastModelArr : [BroadcastsModel]? = []
     var streamUrlTime : String!
-    
+    var uploadFailed : Bool!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        if uploadFailed {
+            shareButton.isUserInteractionEnabled = false
+            shareButton.alpha = 0.5
+        }
           cornerRadius()
           loadThumbnail()
           getBroadcastVideos()

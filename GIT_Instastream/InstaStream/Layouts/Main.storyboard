@@ -3448,7 +3448,7 @@
         <!--Live Stream Timer View Controller-->
         <scene sceneID="xVe-sg-RyQ">
             <objects>
-                <viewController storyboardIdentifier="LiveStreamTimerViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="d7y-DC-Ho2" customClass="LiveStreamTimerViewController" customModule="InstaStream" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="d7y-DC-Ho2" customClass="LiveStreamTimerViewController" customModule="InstaStream" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dFQ-w1-EWe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3507,6 +3507,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j3D-cI-eVb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3432.8000000000002" y="109.29535232383809"/>
+        </scene>
+        <!--Live Stream Timer View Controller-->
+        <scene sceneID="tyl-Ds-czZ">
+            <objects>
+                <viewController storyboardIdentifier="LiveStreamTimerViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="ipP-Ce-MgD" customClass="LiveStreamTimerViewController" customModule="InstaStream" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gHo-68-08q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6rZ-QX-5rY">
+                                <rect key="frame" x="38" y="273.5" width="300" height="120"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Live Streaming Starts In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASf-Cl-Dzq">
+                                        <rect key="frame" x="5" y="20" width="295" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20.5" id="YXM-I1-Inl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ASf-Cl-Dzq" firstAttribute="top" secondItem="6rZ-QX-5rY" secondAttribute="top" constant="20" id="Bz3-JU-oS1"/>
+                                    <constraint firstItem="ASf-Cl-Dzq" firstAttribute="leading" secondItem="6rZ-QX-5rY" secondAttribute="leading" constant="5" id="RjI-em-dK9"/>
+                                    <constraint firstAttribute="trailing" secondItem="ASf-Cl-Dzq" secondAttribute="trailing" id="fRd-tE-44E"/>
+                                    <constraint firstAttribute="height" constant="120" id="hvL-2p-CmK"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="JwW-Oi-A3P"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gG-Fu-OI0">
+                                <rect key="frame" x="58" y="325" width="265" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="3Tr-ll-9k3"/>
+                                    <constraint firstAttribute="width" constant="265" id="Qmd-cv-08K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <color key="textColor" red="0.80000000000000004" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6rZ-QX-5rY" firstAttribute="width" secondItem="gHo-68-08q" secondAttribute="width" constant="-75" id="9BC-8s-DFc"/>
+                            <constraint firstItem="7gG-Fu-OI0" firstAttribute="top" secondItem="ASf-Cl-Dzq" secondAttribute="bottom" constant="10.5" id="a1F-jY-mhl"/>
+                            <constraint firstItem="6rZ-QX-5rY" firstAttribute="centerY" secondItem="oYc-JH-jBD" secondAttribute="centerY" constant="-10" id="hry-lx-9xN"/>
+                            <constraint firstItem="7gG-Fu-OI0" firstAttribute="centerX" secondItem="ASf-Cl-Dzq" secondAttribute="centerX" id="nFa-Pl-GOZ"/>
+                            <constraint firstItem="6rZ-QX-5rY" firstAttribute="centerX" secondItem="oYc-JH-jBD" secondAttribute="centerX" id="uMQ-sE-xU9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oYc-JH-jBD"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8ld-4r-1fR"/>
+                    <connections>
+                        <outlet property="liveStreamingStartLabel" destination="ASf-Cl-Dzq" id="i9N-QS-pbE"/>
+                        <outlet property="timerTime" destination="7gG-Fu-OI0" id="0cS-in-EM1"/>
+                        <outlet property="timerView" destination="6rZ-QX-5rY" id="1qw-Tp-OmE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7EF-6x-En2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3433" y="770"/>
         </scene>
     </scenes>
     <resources>
