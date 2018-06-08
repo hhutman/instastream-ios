@@ -114,6 +114,7 @@ class GalleryViewController: UIViewController {
             self.filterImages()
             if BaseClass.shared().selectedImages.count > 0 {
                 let fbPageView = UIStoryboard.fbPagesView()
+                BaseClass.shared().selectedImages = self.displayImagesArray
                 self.navigationController?.pushViewController(fbPageView, animated: true)
             }
         }
@@ -251,6 +252,7 @@ extension GalleryViewController : UITableViewDelegate,UITableViewDataSource {
         }
         else {
             nextTapped?.backgroundColor = UIColor.colorFromHexString(hexString: "#FF0076", withAlpha: 1.0)
+            self.displayImagesArray = []
         }
         print(self.displayAssetImagesArray)
         return displayAssetImagesArray.count
@@ -263,6 +265,7 @@ extension GalleryViewController : UITableViewDelegate,UITableViewDataSource {
             image, error in
             DispatchQueue.main.async {
                cell.selectedImageView.image = image
+                self.displayImagesArray.append(image!)
             }
         })
         
