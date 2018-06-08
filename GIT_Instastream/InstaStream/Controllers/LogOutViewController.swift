@@ -2,7 +2,7 @@
 //  LogOutViewController.swift
 //  InstaStream
 //
-//  Created by prasanth inavolu on 07/06/18.
+//  Created by Rapid Dev on 07/06/18.
 //  Copyright © 2018 Orbysol. All rights reserved.
 //
 

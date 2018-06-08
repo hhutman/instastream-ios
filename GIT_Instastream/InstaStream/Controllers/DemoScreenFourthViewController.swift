@@ -2,7 +2,7 @@
 //  DemoScreenFourthViewController.swift
 //  InstaStream
 //
-//  Created by prasanth inavolu on 07/06/18.
+//  Created by Rapid Dev on 07/06/18.
 //  Copyright © 2018 Orbysol. All rights reserved.
 //
 
@@ -34,13 +34,13 @@ class DemoScreenFourthViewController: UIViewController {
     
     @IBAction func nextTapped(_sender : Any) {
         if appDelegate.demoFromGallery {
-                let viewcontrollers = self.navigationController?.viewControllers
-                viewcontrollers?.forEach({ (vc) in
-                    if  let galleryVC = vc as? GalleryViewController {
-                        self.navigationController!.popToViewController(galleryVC, animated: true)
-                        appDelegate.demoFromGallery = false
-                    }
-                })
+            guard let viewcontrollers = self.navigationController?.viewControllers else{return}
+            for controller in viewcontrollers {
+                if  let galleryVC = controller as? GalleryViewController {
+                    appDelegate.demoFromGallery = false
+                    self.navigationController!.popToViewController(galleryVC, animated: true)
+                }
+            }
         }else{
             let connectFBView = UIStoryboard.connectWthFb()
             self.navigationController?.pushViewController(connectFBView, animated: true)

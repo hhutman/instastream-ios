@@ -2,8 +2,8 @@
 //  LiveVideoTableViewCell.swift
 //  InstaStream
 //
-//  Created by prasanth inavolu on 05/05/18.
-//  Copyright © 2018 prasanth inavolu. All rights reserved.
+//  Created by Rapid Dev on 05/05/18.
+//  Copyright © 2018 Rapid Dev. All rights reserved.
 //
 
 import UIKit

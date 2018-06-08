@@ -2,8 +2,8 @@
 //  BaseClass.swift
 //  InstaStream
 //
-//  Created by prasanth inavolu on 04/05/18.
-//  Copyright © 2018 prasanth inavolu. All rights reserved.
+//  Created by Rapid Dev on 04/05/18.
+//  Copyright © 2018 Rapid Dev. All rights reserved.
 //
 
 import UIKit

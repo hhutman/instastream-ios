@@ -40,8 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(error)
         }
         BaseClass.shared().showRootViewController()
-        //Crashlytics.sharedInstance().crash()
-        
         return true
     }
 

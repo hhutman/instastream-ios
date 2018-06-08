@@ -2,8 +2,8 @@
 //  UIViewController.swift
 //  InstaStream
 //
-//  Created by prasanth inavolu on 03/05/18.
-//  Copyright © 2018 prasanth inavolu. All rights reserved.
+//  Created by Rapid Dev on 03/05/18.
+//  Copyright © 2018 Rapid Dev. All rights reserved.
 //
 
 import Foundation
