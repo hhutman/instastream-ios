@@ -208,7 +208,7 @@ class APIHelper: NSObject {
                     //Error
                     if connectionError != nil {
                         //print("Service Error and Error info is : \(connectionError!.localizedDescription) \n")
-                        Messages.shared().showErrorMessage(message: (connectionError?.localizedDescription)!)
+                      //  Messages.shared().showErrorMessage(message: (connectionError?.localizedDescription)!)
                         block(nil,connectionError as NSError?)
                     }else{
                         block(nil,connectionError as NSError?)
