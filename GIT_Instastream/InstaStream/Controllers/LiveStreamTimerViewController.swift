@@ -27,7 +27,7 @@ class LiveStreamTimerViewController: UIViewController {
         timerView.layer.cornerRadius = 8
         // timerTime.layer.masksToBounds = true
         //  timerTime.layer.cornerRadius = timerTime.layer.frame.size.height/2
-        self.timerTime.text = "Connecting ..."
+      //  self.timerTime.text = "Connecting ..."
         
         //        self.startLiveTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
         //            if self.liveCount == 0 {

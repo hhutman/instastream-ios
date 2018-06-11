@@ -3538,7 +3538,7 @@
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="JwW-Oi-A3P"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gG-Fu-OI0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are connecting to live stream..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gG-Fu-OI0">
                                 <rect key="frame" x="58" y="325" width="265" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="3Tr-ll-9k3"/>
