@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class BaseClass: NSObject {
     let appDelegate : AppDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -23,7 +24,7 @@ class BaseClass: NSObject {
     var isUserLoggedIn : Bool!
     var userEmail : String!
     var userName : String!
-    
+
     class func shared() -> BaseClass
     {
         if sharedInstance == nil {

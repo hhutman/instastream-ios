@@ -94,15 +94,44 @@ class GalleryViewController: UIViewController {
     }
     
     @IBAction func demoFlowTapped(_ sender: Any) {
-        appDelegate.demoFromGallery = true
-        let demo1View = UIStoryboard.DemoOneView()
-        self.navigationController?.pushViewController(demo1View, animated: true)
+        let alertController = UIAlertController(title: "Suggestions", message: "1. Tap to add \n 2. Swipe to remove \n 3. Hold to rearrange the timeline ", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        self.present(alertController, animated: true, completion: nil)
+//        appDelegate.demoFromGallery = true
+//        let demo1View = UIStoryboard.DemoOneView()
+//        self.navigationController?.pushViewController(demo1View, animated: true)
     }
     
     @IBAction func nextTapped(_ sender: Any) {
-          isEmptyImages()
+          //isEmptyImages()
+        if displayAssetImagesArray.count == 0 {
+            nextTapped?.isEnabled = true
+            nextTapped?.backgroundColor = UIColor.colorFromHexString(hexString: "#F04781", withAlpha: 0.2)
+        }
+        else {
+            nextTapped?.backgroundColor = UIColor.colorFromHexString(hexString: "#FF0076", withAlpha: 1.0)
+            BaseClass.sharedInstance.selectedImages.removeAll()
+            self.loadImages()
+        }
 }
 
+    func loadImages() {
+        let assetObj = self.displayAssetImagesArray[BaseClass.sharedInstance.selectedImages.count]
+        imageManager.requestImage(for: assetObj, targetSize: CGSize(width: 200, height: 200), contentMode: .aspectFill, options: requestOptions, resultHandler:  {
+            image, error in
+            BaseClass.sharedInstance.selectedImages.append(image!)
+            
+            if BaseClass.sharedInstance.selectedImages.count == self.displayAssetImagesArray.count {
+                let fbPageView = UIStoryboard.fbPagesView()
+                self.navigationController?.pushViewController(fbPageView, animated: true)
+            }
+            else {
+                self.loadImages()
+            }
+        })
+    }
+    
     func isEmptyImages() {
         if displayAssetImagesArray.count == 0 {
             nextTapped?.isEnabled = true
@@ -114,7 +143,6 @@ class GalleryViewController: UIViewController {
             self.filterImages()
             if BaseClass.shared().selectedImages.count > 0 {
                 let fbPageView = UIStoryboard.fbPagesView()
-                BaseClass.shared().selectedImages = self.displayImagesArray
                 self.navigationController?.pushViewController(fbPageView, animated: true)
             }
         }
@@ -252,7 +280,6 @@ extension GalleryViewController : UITableViewDelegate,UITableViewDataSource {
         }
         else {
             nextTapped?.backgroundColor = UIColor.colorFromHexString(hexString: "#FF0076", withAlpha: 1.0)
-            self.displayImagesArray = []
         }
         print(self.displayAssetImagesArray)
         return displayAssetImagesArray.count
@@ -265,7 +292,6 @@ extension GalleryViewController : UITableViewDelegate,UITableViewDataSource {
             image, error in
             DispatchQueue.main.async {
                cell.selectedImageView.image = image
-                self.displayImagesArray.append(image!)
             }
         })
         

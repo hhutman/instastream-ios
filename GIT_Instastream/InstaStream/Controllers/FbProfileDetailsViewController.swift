@@ -10,7 +10,7 @@ import UIKit
 import Photos
 
 class FbProfileDetailsViewController: UIViewController {
-
+    
     @IBOutlet weak var profileImageView: AsyncImageView!
     @IBOutlet weak var fbProfileUserName: UILabel!
     @IBOutlet weak var startInstaStream : UIButton?
@@ -72,14 +72,14 @@ class FbProfileDetailsViewController: UIViewController {
                 if (error == nil){
                     print(result as Any)
                     BaseClass.shared().faceBookDict = result as! [String : AnyObject]
-                   // self.dict = result as! [String : AnyObject]
+                    // self.dict = result as! [String : AnyObject]
                     BaseClass.shared().loadFBProfileDetails()
                     self.fetchFBPages()
                     DispatchQueue.main.async {
                         self.loadImage()
                     }
-                  //  self.loadImage()
-                   // self.callFBApi()
+                    //  self.loadImage()
+                    // self.callFBApi()
                     // self.fbLoginWrite()
                 }else{
                     print("\n")
@@ -117,26 +117,26 @@ class FbProfileDetailsViewController: UIViewController {
         fbProfileUserName.text = BaseClass.shared().fbProfileUserName
         makeImageCircle()
         startInstaStream?.layer.cornerRadius = 5
-//        DispatchQueue.main.asyncAfter(deadline: .now()+3.0) {
-            MBProgressHUD.hide(for: self.view, animated: true)
-//        }
+        //        DispatchQueue.main.asyncAfter(deadline: .now()+3.0) {
+        MBProgressHUD.hide(for: self.view, animated: true)
+        //        }
     }
     
     @IBAction func startInstaStreamTappped(_ sender: Any) {
-//        if connectionError {
-//            self.showToastWithMessage(strMessage: "please check your internet connection")
-//            return
-//        }
+        //        if connectionError {
+        //            self.showToastWithMessage(strMessage: "please check your internet connection")
+        //            return
+        //        }
         
         Spinner.show(controller: self)
-
+        
         PHPhotoLibrary.requestAuthorization { status in
             switch status {
             case .authorized:
-//                let fetchOptions = PHFetchOptions()
-//                let allPhotos = PHAsset.fetchAssets(with: .image, options: fetchOptions)
-//                print("Found \(allPhotos.count) assets")
-
+                //                let fetchOptions = PHFetchOptions()
+                //                let allPhotos = PHAsset.fetchAssets(with: .image, options: fetchOptions)
+                //                print("Found \(allPhotos.count) assets")
+                
                 DispatchQueue.main.async {
                     self.moveToGalleryView()
                 }
@@ -151,11 +151,11 @@ class FbProfileDetailsViewController: UIViewController {
             }
         }
         Spinner.hide(controller: self)
-
+        
     }
     
     func moveToGalleryView() {
-
+        
         let goToGalleryView = UIStoryboard.galleryView()
         //  goToGalleryView.grabImages()
         goToGalleryView.isFrom = self
@@ -167,10 +167,10 @@ class FbProfileDetailsViewController: UIViewController {
             switch status {
             case .authorized:
                 print("Not allowed")
-
-//                let fetchOptions = PHFetchOptions()
-//                let allPhotos = PHAsset.fetchAssets(with: .image, options: fetchOptions)
-//                print("Foundjkhfkhfhf \(allPhotos.count) assets")
+                
+                //                let fetchOptions = PHFetchOptions()
+                //                let allPhotos = PHAsset.fetchAssets(with: .image, options: fetchOptions)
+                //                print("Foundjkhfkhfhf \(allPhotos.count) assets")
             // self.grabImages()
             case .denied, .restricted:
                 print("Not allowed")
@@ -181,7 +181,7 @@ class FbProfileDetailsViewController: UIViewController {
             }
         }
     }
-
+    
     
     func makeImageCircle() {
         profileImageView.clipsToBounds = true

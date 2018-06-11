@@ -17,10 +17,10 @@ class ChoosePagesForFbLiveViewController: UIViewController {
     @IBOutlet weak var checkBoxActiveImageView: UIImageView!
     @IBOutlet weak var nextButton : UIButton!
     @IBOutlet weak var lblMessage : UILabel?
-    @IBOutlet weak var selectFbPagesLabel : UILabel!
-    @IBOutlet weak var selectFbPagesLine : UILabel!
-    @IBOutlet weak var noteForPages : UILabel!
-    @IBOutlet weak var noteLbl : UILabel!
+//    @IBOutlet weak var selectFbPagesLabel : UILabel!
+//    @IBOutlet weak var selectFbPagesLine : UILabel!
+//    @IBOutlet weak var noteForPages : UILabel!
+//    @IBOutlet weak var noteLbl : UILabel!
 
     var isSelected : Bool = false //based on selection list shown i.e checkbox
     var checkBoxTapped : Any?
@@ -161,10 +161,10 @@ class ChoosePagesForFbLiveViewController: UIViewController {
             lblMessage?.text = ""
             checkBoxSelected()
             pageToken = ""
-            selectFbPagesLabel.isHidden = true
-            selectFbPagesLine.isHidden = true
-            noteForPages.isHidden = true
-            noteLbl.isHidden = true
+//            selectFbPagesLabel.isHidden = true
+//            selectFbPagesLine.isHidden = true
+//            noteForPages.isHidden = true
+//            noteLbl.isHidden = true
             checkBoxActiveImageView.image = UIImage(named: "CheckBoxActive")
         }
     }

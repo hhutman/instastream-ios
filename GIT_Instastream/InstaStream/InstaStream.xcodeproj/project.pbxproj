@@ -14,11 +14,12 @@
 		192A1B8D20C93CA60064F091 /* DemoScreenFourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192A1B8C20C93CA50064F091 /* DemoScreenFourthViewController.swift */; };
 		192A1B8F20C93D1C0064F091 /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192A1B8E20C93D1B0064F091 /* LogOutViewController.swift */; };
 		1930ED3520C914A7001F4CFB /* 2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1930ED3420C914A5001F4CFB /* 2.gif */; };
-		1930ED3720C914AF001F4CFB /* 3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1930ED3620C914AC001F4CFB /* 3.gif */; };
-		1930ED3920C914B6001F4CFB /* 4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1930ED3820C914B4001F4CFB /* 4.gif */; };
 		197964B720C7BB0B0067DB81 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197964B620C7BB0B0067DB81 /* Reachability.swift */; };
 		19B3B10520CA7C9600C593AF /* LiveStreamTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B3B10420CA7C9500C593AF /* LiveStreamTimerViewController.swift */; };
 		19CBF2A620C8FF27006A8F60 /* LongPressReorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CBF2A520C8FF27006A8F60 /* LongPressReorder.swift */; };
+		19E1121D20CE82160099C99F /* 4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 19E1121B20CE820B0099C99F /* 4.gif */; };
+		19E1121E20CE82160099C99F /* 3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 19E1121C20CE82110099C99F /* 3.gif */; };
+		19E1122020CE877B0099C99F /* FbProfileDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E1121F20CE877B0099C99F /* FbProfileDetailsViewController.swift */; };
 		DB07D2E420B28F77002B45AF /* LiveFacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB07D2E320B28F77002B45AF /* LiveFacebookViewController.swift */; };
 		DB13264920AF089C000D8B75 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB13264820AF089C000D8B75 /* Toast.swift */; };
 		DB13266220AF0910000D8B75 /* MarginAdjustable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB13264B20AF0909000D8B75 /* MarginAdjustable.swift */; };
@@ -63,7 +64,6 @@
 		DB5BE13120A959A30088D59A /* ChoosePagesForFbTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5BE11D20A959A20088D59A /* ChoosePagesForFbTableViewCell.swift */; };
 		DB5BE13220A959A30088D59A /* BroadCastlistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5BE11E20A959A20088D59A /* BroadCastlistCollectionViewCell.swift */; };
 		DB5BE13320A959A30088D59A /* DemoScreenThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5BE11F20A959A20088D59A /* DemoScreenThreeViewController.swift */; };
-		DB5BE13420A959A30088D59A /* FbProfileDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5BE12020A959A20088D59A /* FbProfileDetailsViewController.swift */; };
 		DB5BE13520A959A30088D59A /* ConnectWithFacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5BE12120A959A20088D59A /* ConnectWithFacebookViewController.swift */; };
 		DB5BE13620A959A30088D59A /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5BE12220A959A20088D59A /* SplashScreenViewController.swift */; };
 		DB5BE13720A959A30088D59A /* BroadCastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5BE12320A959A30088D59A /* BroadCastViewController.swift */; };
@@ -110,11 +110,12 @@
 		192A1B8C20C93CA50064F091 /* DemoScreenFourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoScreenFourthViewController.swift; sourceTree = "<group>"; };
 		192A1B8E20C93D1B0064F091 /* LogOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
 		1930ED3420C914A5001F4CFB /* 2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 2.gif; sourceTree = "<group>"; };
-		1930ED3620C914AC001F4CFB /* 3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 3.gif; sourceTree = "<group>"; };
-		1930ED3820C914B4001F4CFB /* 4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 4.gif; sourceTree = "<group>"; };
 		197964B620C7BB0B0067DB81 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		19B3B10420CA7C9500C593AF /* LiveStreamTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveStreamTimerViewController.swift; sourceTree = "<group>"; };
 		19CBF2A520C8FF27006A8F60 /* LongPressReorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LongPressReorder.swift; sourceTree = "<group>"; };
+		19E1121B20CE820B0099C99F /* 4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 4.gif; sourceTree = "<group>"; };
+		19E1121C20CE82110099C99F /* 3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 3.gif; sourceTree = "<group>"; };
+		19E1121F20CE877B0099C99F /* FbProfileDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FbProfileDetailsViewController.swift; sourceTree = "<group>"; };
 		23A441990975B02F167FBB48 /* Pods-InstaStream.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaStream.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstaStream/Pods-InstaStream.debug.xcconfig"; sourceTree = "<group>"; };
 		C2E4F181152D9F7CE3A087FA /* libPods-InstaStream.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstaStream.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6BA11CCD0D4E92A0DA1E5A8 /* Pods-InstaStream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaStream.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaStream/Pods-InstaStream.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,7 +164,6 @@
 		DB5BE11D20A959A20088D59A /* ChoosePagesForFbTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePagesForFbTableViewCell.swift; sourceTree = "<group>"; };
 		DB5BE11E20A959A20088D59A /* BroadCastlistCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadCastlistCollectionViewCell.swift; sourceTree = "<group>"; };
 		DB5BE11F20A959A20088D59A /* DemoScreenThreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoScreenThreeViewController.swift; sourceTree = "<group>"; };
-		DB5BE12020A959A20088D59A /* FbProfileDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FbProfileDetailsViewController.swift; sourceTree = "<group>"; };
 		DB5BE12120A959A20088D59A /* ConnectWithFacebookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectWithFacebookViewController.swift; sourceTree = "<group>"; };
 		DB5BE12220A959A20088D59A /* SplashScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		DB5BE12320A959A30088D59A /* BroadCastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadCastViewController.swift; sourceTree = "<group>"; };
@@ -225,8 +225,8 @@
 			children = (
 				191C4E3520C7FB50006DDB9A /* 1.gif */,
 				1930ED3420C914A5001F4CFB /* 2.gif */,
-				1930ED3620C914AC001F4CFB /* 3.gif */,
-				1930ED3820C914B4001F4CFB /* 4.gif */,
+				19E1121C20CE82110099C99F /* 3.gif */,
+				19E1121B20CE820B0099C99F /* 4.gif */,
 			);
 			path = "GIF's";
 			sourceTree = "<group>";
@@ -380,11 +380,11 @@
 				DB5BE11020A959A00088D59A /* ChoosePagesForFbLiveViewController.swift */,
 				DB5BE11D20A959A20088D59A /* ChoosePagesForFbTableViewCell.swift */,
 				DB5BE12120A959A20088D59A /* ConnectWithFacebookViewController.swift */,
+				19E1121F20CE877B0099C99F /* FbProfileDetailsViewController.swift */,
 				DB5BE11520A959A10088D59A /* DemoScreenOneViewController.swift */,
 				DB5BE11F20A959A20088D59A /* DemoScreenThreeViewController.swift */,
 				192A1B8C20C93CA50064F091 /* DemoScreenFourthViewController.swift */,
 				DB5BE11A20A959A10088D59A /* DemoScreenTwoViewController.swift */,
-				DB5BE12020A959A20088D59A /* FbProfileDetailsViewController.swift */,
 				DB5BE11320A959A00088D59A /* GalleryViewController.swift */,
 				DB5BE11B20A959A10088D59A /* GalleryViewControllerCell.swift */,
 				DB5BE11820A959A10088D59A /* LiveVideoCollectionViewCell.swift */,
@@ -519,13 +519,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19E1121E20CE82160099C99F /* 3.gif in Resources */,
 				1930ED3520C914A7001F4CFB /* 2.gif in Resources */,
 				191C4E3620C7FB52006DDB9A /* 1.gif in Resources */,
 				DBBB47362072026A00BC3117 /* LaunchScreen.storyboard in Resources */,
 				DBBB47332072026A00BC3117 /* Assets.xcassets in Resources */,
-				1930ED3720C914AF001F4CFB /* 3.gif in Resources */,
 				191C4E3420C7FA9A006DDB9A /* funny.gif in Resources */,
-				1930ED3920C914B6001F4CFB /* 4.gif in Resources */,
+				19E1121D20CE82160099C99F /* 4.gif in Resources */,
 				DB5BE13B20A95B220088D59A /* Main.storyboard in Resources */,
 				DB91E44C20B5DD8900453CE5 /* borderImage.png in Resources */,
 			);
@@ -649,7 +649,6 @@
 				DB8F6ED6207230DE00FB8C04 /* UIStoryboard.swift in Sources */,
 				DB256C6D20AF1C650031D3E1 /* MBProgressHUD.m in Sources */,
 				DB8F6ED8207233F000FB8C04 /* Constants.swift in Sources */,
-				DB5BE13420A959A30088D59A /* FbProfileDetailsViewController.swift in Sources */,
 				DB5BE12620A959A30088D59A /* AllInstaStreamsCollectionViewCell.swift in Sources */,
 				DB8F6ED0207230DE00FB8C04 /* DateFormatter.swift in Sources */,
 				DB5BE14020A964B10088D59A /* AsyncImageView.m in Sources */,
@@ -667,6 +666,7 @@
 				DBBB47422072075600BC3117 /* FBLiveApi.swift in Sources */,
 				DB13266E20AF0910000D8B75 /* PassthroughView.swift in Sources */,
 				DB8F6ECB207230DE00FB8C04 /* String.swift in Sources */,
+				19E1122020CE877B0099C99F /* FbProfileDetailsViewController.swift in Sources */,
 				DB8F6ED2207230DE00FB8C04 /* Keyboard.swift in Sources */,
 				DB5BE10E20A959410088D59A /* MessagesHelper.swift in Sources */,
 				192A1B8D20C93CA60064F091 /* DemoScreenFourthViewController.swift in Sources */,
