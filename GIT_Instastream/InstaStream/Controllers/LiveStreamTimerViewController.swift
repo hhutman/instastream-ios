@@ -11,7 +11,7 @@ import UIKit
 class LiveStreamTimerViewController: UIViewController {
 
     @IBOutlet weak var timerTime: UILabel!
-    @IBOutlet weak var liveStreamingStartLabel: UILabel!
+   // @IBOutlet weak var liveStreamingStartLabel: UILabel!
     @IBOutlet weak var timerView: UIView!
     
     var startLiveTimer : Timer!
