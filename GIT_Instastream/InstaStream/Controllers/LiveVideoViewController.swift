@@ -15,6 +15,7 @@ import AVKit
 class LiveVideoViewController: UIViewController {
     
     @IBOutlet weak var liveStreamingView: UIView!
+    @IBOutlet weak var suggestionView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var playAndPaseView : UIView!
@@ -146,6 +147,10 @@ class LiveVideoViewController: UIViewController {
         let liveStartViCo = UIStoryboard.liveStreamTimer()
         self.navigationController?.present(liveStartViCo, animated: true, completion: nil)
         self.loadLFLiveKitView()
+    }
+    
+    @IBAction func suggestionTapped(_sender : Any) {
+        self.showToastWithMessage(strMessage: "75 seconds broadcast limit")
     }
     
     @IBAction func finishTapped(_ sender: Any) {
@@ -345,6 +350,8 @@ class LiveVideoViewController: UIViewController {
         self.playAndPaseView.clipsToBounds = true
         self.finishButton.layer.cornerRadius = 10
         self.finishButton.clipsToBounds = true
+        self.suggestionView.layer.cornerRadius = self.suggestionView.frame.size.width/2
+        self.suggestionView.layer.masksToBounds = true
     }
     
     //LFLIVEKIT code

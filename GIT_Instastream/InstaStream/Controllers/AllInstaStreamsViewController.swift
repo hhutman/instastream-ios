@@ -21,12 +21,22 @@ class AllInstaStreamsViewController: UIViewController {
         super.viewDidLoad()
         let back = UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(AllInstaStreamsViewController.backTapped))
         navigationItem.leftBarButtonItem = back
+        let add = UIBarButtonItem(image: UIImage(named: "Add Button"), style: .plain, target: self, action: #selector(AllInstaStreamsViewController.addTapped))
+        navigationItem.rightBarButtonItem = add
         addCustomTitleForNavigationBar(titleStr: "InstaStream.tv") 
        getBroadcastVideos()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         navigationBarColorChange()
+    }
+    
+    @objc func addTapped() {
+        BaseClass.shared().selectedImages = []
+        //        let goToGalleryView = UIStoryboard.galleryView()
+        let goToGalleryView = UIStoryboard.fbProfileDetails()
+        //   goToGalleryView.grabImages()
+        navigationController?.pushViewController(goToGalleryView, animated: true)
     }
     
     @objc  func backTapped() {
