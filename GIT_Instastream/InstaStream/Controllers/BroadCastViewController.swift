@@ -15,6 +15,7 @@ class BroadCastViewController: UIViewController {
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var broadCastsButton: UIButton!
+    @IBOutlet weak var allBroadCastsButton: UIButton!
     @IBOutlet weak var anotherInstaStream: UIButton!
     
     @IBOutlet weak var imageView: UIImageView!
@@ -89,6 +90,7 @@ class BroadCastViewController: UIViewController {
         shareButton.layer.cornerRadius = 5
         saveButton.layer.cornerRadius = 5
         broadCastsButton.layer.cornerRadius = 5
+        allBroadCastsButton.layer.cornerRadius = 5
         anotherInstaStream.layer.cornerRadius = 5
         self.anotherInstaStream.layer.borderWidth = 1
         self.anotherInstaStream.layer.borderColor = UIColor.colorFromHexString(hexString: "#F04781", withAlpha: 1.0).cgColor
@@ -194,13 +196,18 @@ class BroadCastViewController: UIViewController {
     }
     
     @IBAction func allBroadcastsButtonTapped(_ sender: Any) {
+        let broadCastlistScreen = UIStoryboard.allInstaStreams()
+        navigationController?.pushViewController(broadCastlistScreen, animated: true)
+    }
+    
+    @IBAction func myInstastreamsTapped(_sender : Any) {
         let broadCastlistScreen = UIStoryboard.broadCastlistScreen()
         navigationController?.pushViewController(broadCastlistScreen, animated: true)
     }
     
     @IBAction func createAnotherInstaStream(_ sender: Any) {
         BaseClass.shared().selectedImages = []
-        let goToGalleryView = UIStoryboard.galleryView()
+        let goToGalleryView = UIStoryboard.fbProfileDetails()
    //     goToGalleryView.grabImages()
         navigationController?.pushViewController(goToGalleryView, animated: true)
     }

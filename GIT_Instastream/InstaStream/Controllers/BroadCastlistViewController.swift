@@ -27,7 +27,7 @@ class BroadCastlistViewController: UIViewController {
         exploreAllInstastreamsButton.layer.cornerRadius = 5
         exploreAllInstastreamsButton.layer.borderWidth = 1
         exploreAllInstastreamsButton.layer.borderColor = UIColor.colorFromHexString(hexString: "#F04781", withAlpha: 1.0).cgColor
-        addCustomTitleForNavigationBar(titleStr: "Your InstaStreams")
+        addCustomTitleForNavigationBar(titleStr: "My InstaStreams")
         getBroadcastVideos()
     }
     
@@ -37,7 +37,8 @@ class BroadCastlistViewController: UIViewController {
     
     @objc func addTapped() {
         BaseClass.shared().selectedImages = []
-        let goToGalleryView = UIStoryboard.galleryView()
+//        let goToGalleryView = UIStoryboard.galleryView()
+        let goToGalleryView = UIStoryboard.fbProfileDetails()
      //   goToGalleryView.grabImages()
         navigationController?.pushViewController(goToGalleryView, animated: true)
     }

@@ -1871,7 +1871,7 @@
         <!--Broad Cast View Controller-->
         <scene sceneID="bhR-Ni-Ebf">
             <objects>
-                <viewController storyboardIdentifier="BroadCastViewController" id="Jjy-G8-RsP" customClass="BroadCastViewController" customModule="InstaStream" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Jjy-G8-RsP" customClass="BroadCastViewController" customModule="InstaStream" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4y2-bh-0e0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1936,7 +1936,7 @@
                                     <constraint firstAttribute="height" constant="45" id="Fqf-Og-YPW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
-                                <state key="normal" title="All Broadcasts">
+                                <state key="normal" title="All InstaStreams">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -2677,120 +2677,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tGO-ta-z8P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="607.20000000000005" y="129.08545727136433"/>
-        </scene>
-        <!--Broad Cast View Controller-->
-        <scene sceneID="MAQ-gx-vPo">
-            <objects>
-                <viewController id="BM1-Ku-FA1" customClass="BroadCastViewController" customModule="InstaStream" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6J8-Bd-Qbm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rfr-aZ-I1v">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="305"/>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qxb-Hz-IgG">
-                                <rect key="frame" x="20" y="329" width="335" height="45"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOT-He-3MG">
-                                        <rect key="frame" x="0.0" y="0.0" width="162.5" height="45"/>
-                                        <color key="backgroundColor" red="0.94117647059999998" green="0.2784313725" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
-                                        <state key="normal" title="  Share" image="Share">
-                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="shareTapped:" destination="BM1-Ku-FA1" eventType="touchUpInside" id="ijR-bI-oEB"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcZ-aN-9lN">
-                                        <rect key="frame" x="172.5" y="0.0" width="162.5" height="45"/>
-                                        <color key="backgroundColor" red="1" green="0.10980392160000001" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
-                                        <state key="normal" title="Save">
-                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="saveButtonTapped:" destination="BM1-Ku-FA1" eventType="touchUpInside" id="zKb-GN-mzA"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="xQy-DW-c3B"/>
-                                </constraints>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6E-we-v70">
-                                <rect key="frame" x="22" y="394" width="335" height="45"/>
-                                <color key="backgroundColor" red="0.94117647059999998" green="0.2784313725" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="3Jr-XP-a7q"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
-                                <state key="normal" title="All Broadcasts">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="allBroadcastsButtonTapped:" destination="BM1-Ku-FA1" eventType="touchUpInside" id="4Mc-Ia-yfX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdN-Ig-5JH">
-                                <rect key="frame" x="22" y="499" width="335" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="ZbI-Rf-XxX"/>
-                                </constraints>
-                                <state key="normal" title="Create Another InstaStream">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="createAnotherInstaStream:" destination="BM1-Ku-FA1" eventType="touchUpInside" id="mnX-3z-sjs"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDA-8G-rsU">
-                                <rect key="frame" x="167" y="129" width="40" height="47"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="4xW-Pr-si8"/>
-                                    <constraint firstAttribute="height" constant="47" id="Aj5-jg-fts"/>
-                                </constraints>
-                                <state key="normal" image="Shape"/>
-                                <connections>
-                                    <action selector="playBtnTapped:" destination="BM1-Ku-FA1" eventType="touchUpInside" id="h4T-JC-VaM"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="i6E-we-v70" firstAttribute="leading" secondItem="wgc-GF-Nk4" secondAttribute="leading" constant="22" id="2Vr-vC-eaA"/>
-                            <constraint firstItem="rfr-aZ-I1v" firstAttribute="height" secondItem="6J8-Bd-Qbm" secondAttribute="height" multiplier="0.35" constant="71.550000000000011" id="3Rv-gX-lZZ"/>
-                            <constraint firstItem="qxb-Hz-IgG" firstAttribute="leading" secondItem="wgc-GF-Nk4" secondAttribute="leading" constant="20" id="48V-M0-RYH"/>
-                            <constraint firstItem="wgc-GF-Nk4" firstAttribute="trailing" secondItem="qxb-Hz-IgG" secondAttribute="trailing" constant="20" id="7Dd-Fe-TJV"/>
-                            <constraint firstItem="pDA-8G-rsU" firstAttribute="centerX" secondItem="rfr-aZ-I1v" secondAttribute="centerX" id="CkV-PW-xv5"/>
-                            <constraint firstItem="qxb-Hz-IgG" firstAttribute="top" secondItem="rfr-aZ-I1v" secondAttribute="bottom" constant="24" id="Jmo-Ed-pTi"/>
-                            <constraint firstItem="rdN-Ig-5JH" firstAttribute="leading" secondItem="wgc-GF-Nk4" secondAttribute="leading" constant="22" id="PV6-Gb-kzZ"/>
-                            <constraint firstItem="wgc-GF-Nk4" firstAttribute="trailing" secondItem="rdN-Ig-5JH" secondAttribute="trailing" constant="18" id="Sbb-tV-ZHJ"/>
-                            <constraint firstItem="pDA-8G-rsU" firstAttribute="centerY" secondItem="rfr-aZ-I1v" secondAttribute="centerY" id="gCj-Mc-3A3"/>
-                            <constraint firstItem="rfr-aZ-I1v" firstAttribute="trailing" secondItem="wgc-GF-Nk4" secondAttribute="trailing" id="hrS-6U-yaW"/>
-                            <constraint firstItem="rfr-aZ-I1v" firstAttribute="leading" secondItem="wgc-GF-Nk4" secondAttribute="leading" id="nFU-Ym-VaY"/>
-                            <constraint firstItem="rfr-aZ-I1v" firstAttribute="top" secondItem="wgc-GF-Nk4" secondAttribute="top" constant="-20" id="rem-m6-A2s"/>
-                            <constraint firstItem="i6E-we-v70" firstAttribute="top" secondItem="qxb-Hz-IgG" secondAttribute="bottom" constant="20" id="rwG-xy-fKE"/>
-                            <constraint firstItem="rdN-Ig-5JH" firstAttribute="top" secondItem="i6E-we-v70" secondAttribute="bottom" constant="60" id="uao-lr-fia"/>
-                            <constraint firstItem="wgc-GF-Nk4" firstAttribute="trailing" secondItem="i6E-we-v70" secondAttribute="trailing" constant="18" id="xBv-8l-Bcm"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="wgc-GF-Nk4"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Wqt-Xy-VJb"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="anotherInstaStream" destination="rdN-Ig-5JH" id="p9s-8P-KHI"/>
-                        <outlet property="broadCastsButton" destination="i6E-we-v70" id="fZg-E3-UDI"/>
-                        <outlet property="imageView" destination="rfr-aZ-I1v" id="Izx-er-BOx"/>
-                        <outlet property="saveButton" destination="rcZ-aN-9lN" id="gVj-vE-KDV"/>
-                        <outlet property="shareButton" destination="LOT-He-3MG" id="ZLF-y4-eem"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="91L-lJ-XDa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5332" y="783.95802098950526"/>
         </scene>
         <!--Live Kit View Controller-->
         <scene sceneID="Tfp-LK-ftQ">
@@ -3763,6 +3649,144 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMh-uG-wTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="605.60000000000002" y="857.72113943028489"/>
+        </scene>
+        <!--Broad Cast View Controller-->
+        <scene sceneID="CRe-yy-VBY">
+            <objects>
+                <viewController storyboardIdentifier="BroadCastViewController" id="blT-4Y-e5h" customClass="BroadCastViewController" customModule="InstaStream" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wdp-kL-5xE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DBr-Jb-RMW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="284.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mXx-rf-t85">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="284.5"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vr-IT-7gd">
+                                        <rect key="frame" x="167" y="118" width="40" height="47"/>
+                                        <state key="normal" image="Shape"/>
+                                        <connections>
+                                            <action selector="playBtnTapped:" destination="blT-4Y-e5h" eventType="touchUpInside" id="P8n-Vd-fvE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="7vr-IT-7gd" firstAttribute="centerY" secondItem="DBr-Jb-RMW" secondAttribute="centerY" id="6de-IN-h11"/>
+                                    <constraint firstItem="mXx-rf-t85" firstAttribute="leading" secondItem="DBr-Jb-RMW" secondAttribute="leading" id="Nar-C6-Z5q"/>
+                                    <constraint firstAttribute="bottom" secondItem="mXx-rf-t85" secondAttribute="bottom" id="QUZ-fH-Ws4"/>
+                                    <constraint firstItem="mXx-rf-t85" firstAttribute="top" secondItem="DBr-Jb-RMW" secondAttribute="top" id="cev-vq-uUk"/>
+                                    <constraint firstItem="7vr-IT-7gd" firstAttribute="centerX" secondItem="DBr-Jb-RMW" secondAttribute="centerX" id="mPC-0t-Ztk"/>
+                                    <constraint firstAttribute="trailing" secondItem="mXx-rf-t85" secondAttribute="trailing" id="mhk-FV-8xO"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="312-40-2rE">
+                                <rect key="frame" x="20" y="329.5" width="335" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqY-qq-WYU">
+                                        <rect key="frame" x="0.0" y="0.0" width="162.5" height="45"/>
+                                        <color key="backgroundColor" red="0.94117647059999998" green="0.2784313725" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
+                                        <state key="normal" title="  Share" image="Share">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="shareTapped:" destination="blT-4Y-e5h" eventType="touchUpInside" id="Mgs-qY-qcJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcJ-a7-yue">
+                                        <rect key="frame" x="172.5" y="0.0" width="162.5" height="45"/>
+                                        <color key="backgroundColor" red="1" green="0.10980392160000001" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveButtonTapped:" destination="blT-4Y-e5h" eventType="touchUpInside" id="rr4-hS-rHF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="lVC-EB-Qrp"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hqn-35-Avh">
+                                <rect key="frame" x="20" y="384.5" width="335" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7d-DD-G6H">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="45"/>
+                                        <color key="backgroundColor" red="0.94117647059999998" green="0.2784313725" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
+                                        <state key="normal" title="My InstaStreams">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="myInstastreamsTappedWith_sender:" destination="blT-4Y-e5h" eventType="touchUpInside" id="Ude-kR-xhl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtG-Tr-Dzl">
+                                        <rect key="frame" x="0.0" y="55" width="335" height="45"/>
+                                        <color key="backgroundColor" red="0.94117647059999998" green="0.2784313725" blue="0.50588235290000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
+                                        <state key="normal" title="All InstaStreams">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="allBroadcastsButtonTapped:" destination="blT-4Y-e5h" eventType="touchUpInside" id="91D-Gg-Xjy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="mpK-4t-QLO"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2T-yq-MRt">
+                                <rect key="frame" x="22" y="521.5" width="335" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="nr9-8s-Uyb"/>
+                                </constraints>
+                                <state key="normal" title="Create Another InstaStream">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="createAnotherInstaStream:" destination="blT-4Y-e5h" eventType="touchUpInside" id="8Gf-Fy-Ita"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Y2T-yq-MRt" firstAttribute="leading" secondItem="NSh-zp-bO9" secondAttribute="leading" constant="22" id="659-E0-8gi"/>
+                            <constraint firstItem="DBr-Jb-RMW" firstAttribute="height" secondItem="Wdp-kL-5xE" secondAttribute="height" multiplier="0.35" constant="51.200000000000017" id="Dw9-IG-ipM"/>
+                            <constraint firstItem="NSh-zp-bO9" firstAttribute="trailing" secondItem="312-40-2rE" secondAttribute="trailing" constant="20" id="Hes-Gk-boS"/>
+                            <constraint firstItem="DBr-Jb-RMW" firstAttribute="top" secondItem="Wdp-kL-5xE" secondAttribute="top" id="Hey-23-1V4"/>
+                            <constraint firstItem="DBr-Jb-RMW" firstAttribute="leading" secondItem="NSh-zp-bO9" secondAttribute="leading" id="QCl-YP-kg9"/>
+                            <constraint firstItem="NSh-zp-bO9" firstAttribute="trailing" secondItem="Y2T-yq-MRt" secondAttribute="trailing" constant="18" id="W2m-D5-iNE"/>
+                            <constraint firstItem="hqn-35-Avh" firstAttribute="leading" secondItem="NSh-zp-bO9" secondAttribute="leading" constant="20" id="h7U-3b-njE"/>
+                            <constraint firstItem="DBr-Jb-RMW" firstAttribute="trailing" secondItem="NSh-zp-bO9" secondAttribute="trailing" id="jjv-dh-eBY"/>
+                            <constraint firstItem="hqn-35-Avh" firstAttribute="top" secondItem="312-40-2rE" secondAttribute="bottom" constant="10" id="q64-KM-V6h"/>
+                            <constraint firstItem="312-40-2rE" firstAttribute="top" secondItem="DBr-Jb-RMW" secondAttribute="bottom" constant="45" id="rgQ-AS-MWa"/>
+                            <constraint firstItem="312-40-2rE" firstAttribute="leading" secondItem="NSh-zp-bO9" secondAttribute="leading" constant="20" id="v1F-bU-gn1"/>
+                            <constraint firstItem="Y2T-yq-MRt" firstAttribute="top" secondItem="hqn-35-Avh" secondAttribute="bottom" constant="37" id="ykF-dv-TK8"/>
+                            <constraint firstItem="NSh-zp-bO9" firstAttribute="trailing" secondItem="hqn-35-Avh" secondAttribute="trailing" constant="20" id="zVE-3K-HgJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NSh-zp-bO9"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mqk-E3-Uvd"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="allBroadCastsButton" destination="vtG-Tr-Dzl" id="eqe-Rj-eTD"/>
+                        <outlet property="anotherInstaStream" destination="Y2T-yq-MRt" id="vSt-1k-CD6"/>
+                        <outlet property="broadCastsButton" destination="U7d-DD-G6H" id="LhW-Ql-Nys"/>
+                        <outlet property="imageView" destination="mXx-rf-t85" id="Lic-qd-n1y"/>
+                        <outlet property="saveButton" destination="gcJ-a7-yue" id="kZl-nV-P6V"/>
+                        <outlet property="shareButton" destination="gqY-qq-WYU" id="toJ-k6-zCX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KBA-2M-PEK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6010" y="829"/>
         </scene>
     </scenes>
     <resources>
