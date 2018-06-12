@@ -335,7 +335,7 @@ extension GalleryViewController {
     {
         //swap(&self.displayAssetImagesArray[initialIndex.row], &self.displayAssetImagesArray[finalIndex.row])
         self.displayAssetImagesArray.swapAt(initialIndex.row, finalIndex.row)
-        print(displayAssetImagesArray)
+        self.tableView.reloadData()
     }
 }
     
