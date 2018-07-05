@@ -142,7 +142,7 @@ class ConnectWithFacebookViewController: UIViewController {
         //if the user is already logged in
         if (FBSDKAccessToken.current()) != nil{
             if BaseClass.shared().userId != nil {
-                if !FBSDKAccessToken.current().hasGranted("publish_actions") {
+                if !FBSDKAccessToken.current().hasGranted("publish_actions") || !FBSDKAccessToken.current().hasGranted("publish_video") {
                     self.fbLoginWrite()
                 }
                 else{
@@ -182,11 +182,11 @@ class ConnectWithFacebookViewController: UIViewController {
 }
     
     func fbLoginWrite() {
-        if FBSDKAccessToken.current().hasGranted("publish_actions") {
+        if FBSDKAccessToken.current().hasGranted("publish_actions") || FBSDKAccessToken.current().hasGranted("publish_video") {
             self.moveToFBProfileDetailsView()
         }else{
         let loginManager = FBSDKLoginManager()
-        loginManager.logIn(withPublishPermissions: ["publish_actions","manage_pages","publish_pages"], from: self) { (result, error) in
+        loginManager.logIn(withPublishPermissions: ["publish_actions","manage_pages","publish_pages","publish_video"], from: self) { (result, error) in
             if error != nil {
                 print("Error")
             } else if result?.isCancelled == true {
@@ -194,7 +194,7 @@ class ConnectWithFacebookViewController: UIViewController {
             } else {
                 print("Logged in for write")
             //    self.getFBUserData()
-                     if FBSDKAccessToken.current().hasGranted("publish_actions") {
+                     if FBSDKAccessToken.current().hasGranted("publish_actions") || FBSDKAccessToken.current().hasGranted("publish_video"){
                         self.moveToFBProfileDetailsView()
                 }
                 //self.startLiveStreaming()

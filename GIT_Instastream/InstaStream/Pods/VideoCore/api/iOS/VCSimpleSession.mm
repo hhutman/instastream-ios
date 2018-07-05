@@ -863,17 +863,12 @@ namespace videocore { namespace simpleApi {
 }
 - (void) addPixelBufferSource: (UIImage*) image
                      withRect:(CGRect)rect {
-    if (m_pixelBufferSource != nil)
-    {
-        m_videoMixer->unregisterSource(m_pixelBufferSource);
-    }
-
     CGImageRef ref = [image CGImage];
     
     m_pixelBufferSource = std::make_shared<videocore::Apple::PixelBufferSource>(CGImageGetWidth(ref),
                                                                                 CGImageGetHeight(ref),
                                                                                 'BGRA');
-    NSLog(@"PRASHANTH  m_pixelBufferSource is");
+    
     NSUInteger width = CGImageGetWidth(ref);
     NSUInteger height = CGImageGetHeight(ref);
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
@@ -887,38 +882,14 @@ namespace videocore { namespace simpleApi {
     CGColorSpaceRelease(colorSpace);
     
     CGContextDrawImage(context, CGRectMake(0, 0, width, height), ref);
-    
-    //  UIImage *image1 = image;
-    
-    //    CGRect imageRect = CGRectMake(0, 0, width, height); // desired x/y coords, with maximum width/height
-    //    // calculate resize ratio, and apply to rect
-    //    CGFloat ratio = MIN(imageRect.size.width / image1.size.width, imageRect.size.height / image1.size.height);
-    //    imageRect.size.width = imageRect.size.width * ratio;
-    //    imageRect.size.height = imageRect.size.height * ratio;
-    //    CGContextDrawImage(context, imageRect, ref);
-    
-    
-    
     CGContextRelease(context);
     
     m_pbAspect = std::make_shared<videocore::AspectTransform>(rect.size.width,rect.size.height,videocore::AspectTransform::kAspectFit);
     
-    //    m_pbPosition = std::make_shared<videocore::PositionTransform>(rect.origin.x, rect.origin.y + 20,
-    //                                                                  rect.size.width, rect.size.height,
-    //                                                                  self.videoSize.width - 1200, self.videoSize.height - 850
-    //                                                                            );
-    
-    //    m_pbPosition = std::make_shared<videocore::PositionTransform>(rect.origin.x, rect.origin.y,
-    //                                                                  rect.size.width, rect.size.height,
-    //                                                                  self.videoSize.width, self.videoSize.height - 200); //aspect fit
-    
-//    m_pbPosition = std::make_shared<videocore::PositionTransform>(rect.origin.x, rect.origin.y + 120,
-//                                                                  rect.size.width, rect.size.height + 350,
-//                                                                  self.videoSize.width - 1200, self.videoSize.height);
-    
-    m_pbPosition = std::make_shared<videocore::PositionTransform>(rect.origin.x + 600, rect.origin.y,rect.size.width + 200, rect.size.height + 150,self.videoSize.width, self.videoSize.height);
-
-    
+    m_pbPosition = std::make_shared<videocore::PositionTransform>(rect.origin.x, rect.origin.y,
+                                                                  rect.size.width, rect.size.height,
+                                                                  self.videoSize.width, self.videoSize.height
+                                                                            );
     m_pixelBufferSource->setOutput(m_pbAspect);
     m_pbAspect->setOutput(m_pbPosition);
     m_pbPosition->setOutput(m_videoMixer);
@@ -926,6 +897,7 @@ namespace videocore { namespace simpleApi {
     m_pixelBufferSource->pushPixelBuffer(rawData, width * height * 4);
     
     free(rawData);
+    
 }
 - (NSString *) applicationDocumentsDirectory
 {

@@ -2,8 +2,8 @@
 //  LFLiveKitViewController.swift
 //  InstaStream
 //
-//  Created by Orbysol on 5/16/18.
-//  Copyright © 2018 Orbysol. All rights reserved.
+//  Created by Rapid on 5/16/18.
+//  Copyright © 2018 Rapid. All rights reserved.
 //
 
 import UIKit

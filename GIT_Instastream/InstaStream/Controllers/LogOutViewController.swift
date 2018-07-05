@@ -3,7 +3,7 @@
 //  InstaStream
 //
 //  Created by Rapid Dev on 07/06/18.
-//  Copyright © 2018 Orbysol. All rights reserved.
+//  Copyright © 2018 Rapid. All rights reserved.
 //
 
 import UIKit

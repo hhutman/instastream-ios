@@ -2,8 +2,8 @@
 //  FBLiveApi.swift
 //  InstaStream
 //
-//  Created by Orbysol on 4/2/18.
-//  Copyright © 2018 Orbysol. All rights reserved.
+//  Created by Rapid on 4/2/18.
+//  Copyright © 2018 Rapid. All rights reserved.
 //
 
 import Foundation
@@ -28,7 +28,7 @@ class FBLiveAPI {
     func startLive(privacy: FBLivePrivacy, callback: @escaping CallbackBlock) {
         DispatchQueue.main.async {
             //FBSDKAccessToken.setCurrent(FBSDKAccessToken!)
-            if FBSDKAccessToken.current().hasGranted("publish_actions") {
+            if FBSDKAccessToken.current().hasGranted("publish_actions") || FBSDKAccessToken.current().hasGranted("publish_video") {
                 let path = "/me/live_videos"
               //  let path = "/295356941001509/live_videos"
 //                let params = [
@@ -79,7 +79,7 @@ class FBLiveAPI {
     
     func endLive(callback: @escaping CallbackBlock) {
         DispatchQueue.main.async {
-            if FBSDKAccessToken.current().hasGranted("publish_actions") {
+            if FBSDKAccessToken.current().hasGranted("publish_actions") || FBSDKAccessToken.current().hasGranted("publish_video") {
                 guard let id = self.liveVideoId else { return }
                 let path = "/\(id)"
 

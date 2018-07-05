@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Controllers/ConnectWithFacebookViewController.swift"
-            timestampString = "550080564.844509"
+            timestampString = "550163553.399868"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "158"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Controllers/ConnectWithFacebookViewController.swift"
-            timestampString = "550080564.8446701"
+            timestampString = "550163553.399973"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "211"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Helpers/APIHelper.swift"
-            timestampString = "550144721.741498"
+            timestampString = "550578126.103139"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "193"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Helpers/APIHelper.swift"
-            timestampString = "550144721.742239"
+            timestampString = "550578126.104073"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "209"
@@ -73,40 +73,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Controllers/LiveVideoViewController.swift"
-            timestampString = "550144721.742817"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
-            landmarkName = "uploadVideo(videoUrl:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Controllers/LiveVideoViewController.swift"
-            timestampString = "550144721.742892"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
-            landmarkName = "finishTapped(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Controllers/ConnectWithFacebookViewController.swift"
-            timestampString = "550080564.848222"
+            timestampString = "550163553.402403"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "226"
@@ -122,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Controllers/ConnectWithFacebookViewController.swift"
-            timestampString = "550080564.849277"
+            timestampString = "550163553.402524"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "144"
@@ -138,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Helpers/APIHelper.swift"
-            timestampString = "550144721.743047"
+            timestampString = "550578126.104576"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "145"
@@ -154,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Controllers/ConnectWithFacebookViewController.swift"
-            timestampString = "550080564.850245"
+            timestampString = "550163553.403511"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "143"
@@ -170,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Controllers/ConnectWithFacebookViewController.swift"
-            timestampString = "550080564.850327"
+            timestampString = "550163553.403604"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "157"
@@ -185,8 +153,8 @@
                   symbolName = "InstaStream.ConnectWithFacebookViewController.fbButtonTapped(Any) -&gt; ()"
                   moduleName = "InstaStream"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rapid/Desktop/GIT_Instastream/InstaStream/Controllers/ConnectWithFacebookViewController.swift"
-                  timestampString = "550144833.609948"
+                  urlString = "file:///Users/rapid/Documents/InstaStream_GIT/GIT_Instastream/InstaStream/Controllers/ConnectWithFacebookViewController.swift"
+                  timestampString = "550575835.170282"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "157"
@@ -200,8 +168,8 @@
                   symbolName = "closure #1 (Swift.Optional&lt;__ObjC.FBSDKLoginManagerLoginResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in InstaStream.ConnectWithFacebookViewController.fbButtonTapped(Any) -&gt; ()"
                   moduleName = "InstaStream"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rapid/Desktop/GIT_Instastream/InstaStream/Controllers/ConnectWithFacebookViewController.swift"
-                  timestampString = "550144833.613353"
+                  urlString = "file:///Users/rapid/Documents/InstaStream_GIT/GIT_Instastream/InstaStream/Controllers/ConnectWithFacebookViewController.swift"
+                  timestampString = "550575835.174498"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "158"
@@ -218,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Controllers/GalleryViewController.swift"
-            timestampString = "550144721.74371"
+            timestampString = "550578126.105024"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "filterImages()"
             landmarkType = "7">
          </BreakpointContent>
@@ -234,27 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Controllers/GalleryViewController.swift"
-            timestampString = "550144721.74379"
+            timestampString = "550578126.105137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "255"
-            endingLineNumber = "255"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Controllers/GalleryViewController.swift"
-            timestampString = "550144721.743862"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
             landmarkName = "filterImages()"
             landmarkType = "7">
          </BreakpointContent>
@@ -266,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Controllers/GalleryViewController.swift"
-            timestampString = "550144721.743933"
+            timestampString = "550578126.105211"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
             landmarkName = "filterImages()"
             landmarkType = "7">
          </BreakpointContent>
@@ -282,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Controllers/GalleryViewController.swift"
-            timestampString = "550144721.744001"
+            timestampString = "550578126.105319"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "filterImages()"
             landmarkType = "7">
             <Locations>
@@ -297,12 +249,12 @@
                   symbolName = "InstaStream.GalleryViewController.filterImages() -&gt; ()"
                   moduleName = "InstaStream"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rapid/Desktop/GIT_Instastream/InstaStream/Controllers/GalleryViewController.swift"
-                  timestampString = "550144833.648772"
+                  urlString = "file:///Users/rapid/Documents/InstaStream_GIT/GIT_Instastream/InstaStream/Controllers/GalleryViewController.swift"
+                  timestampString = "550575835.2049249"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "125"
-                  endingLineNumber = "125"
+                  startingLineNumber = "154"
+                  endingLineNumber = "154"
                   offsetFromSymbolStart = "364">
                </Location>
                <Location
@@ -312,12 +264,12 @@
                   symbolName = "closure #1 (Swift.Optional&lt;__ObjC.UIImage&gt;, Swift.Optional&lt;Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;&gt;) -&gt; () in InstaStream.GalleryViewController.filterImages() -&gt; ()"
                   moduleName = "InstaStream"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rapid/Desktop/GIT_Instastream/InstaStream/Controllers/GalleryViewController.swift"
-                  timestampString = "550144833.652324"
+                  urlString = "file:///Users/rapid/Documents/InstaStream_GIT/GIT_Instastream/InstaStream/Controllers/GalleryViewController.swift"
+                  timestampString = "550575835.20916"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "128"
-                  endingLineNumber = "128"
+                  startingLineNumber = "157"
+                  endingLineNumber = "157"
                   offsetFromSymbolStart = "32">
                </Location>
             </Locations>
@@ -330,7 +282,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Controllers/DemoScreenOneViewController.swift"
-            timestampString = "550144721.744071"
+            timestampString = "550163553.408077"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -346,12 +298,74 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Controllers/DemoScreenOneViewController.swift"
-            timestampString = "550144721.7444789"
+            timestampString = "550163553.40816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
             endingLineNumber = "48"
             landmarkName = "performSegue(withIdentifier:sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Controllers/FbProfileDetailsViewController.swift"
+            timestampString = "550407879.938704"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "195"
+            endingLineNumber = "195">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Controllers/LiveVideoViewController.swift"
+            timestampString = "550578126.105523"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "428"
+            endingLineNumber = "428"
+            landmarkName = "startLiveStreaming()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Controllers/LiveVideoViewController.swift"
+            timestampString = "550578126.1066689"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "439"
+            endingLineNumber = "439"
+            landmarkName = "startLiveStreaming()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Controllers/LiveVideoViewController.swift"
+            timestampString = "550578126.107522"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "442"
+            endingLineNumber = "442"
+            landmarkName = "startLiveStreaming()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

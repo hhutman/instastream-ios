@@ -2,8 +2,8 @@
 ////  FacebookLiveViewController.swift
 ////  InstaStream
 ////
-////  Created by Orbysol on 4/2/18.
-////  Copyright © 2018 Orbysol. All rights reserved.
+////  Created by Rapid on 4/2/18.
+////  Copyright © 2018 Rapid. All rights reserved.
 ////
 //
 //import UIKit

@@ -133,7 +133,7 @@ class LiveVideoViewController: UIViewController {
         //        }
         //        self.navigationController?.present(liveStartViCo, animated: true, completion: nil)
         
-        if !FBSDKAccessToken.current().hasGranted("publish_actions") {
+        if !FBSDKAccessToken.current().hasGranted("publish_actions") || !FBSDKAccessToken.current().hasGranted("publish_video"){
             self.fbLogin()
         }else{
             //            self.loadLFLiveKitView()
@@ -191,6 +191,13 @@ class LiveVideoViewController: UIViewController {
         //        let fileSize = BaseClass.shared().getFileSizeWithUrl(url: self.reqUrl)
         //        print("file size is \(fileSize)")
     }
+    
+//    override func viewDidDisappear(_ animated: Bool) {
+//        if self.liveStreamingView != nil {
+//            self.liveStreamingView.removeFromSuperview()
+//            self.liveStreamingView = nil
+//        }
+//    }
     
     func uploadVideo(videoUrl : URL) {
         let size = BaseClass.shared().getFileSizeWithUrl(url: videoUrl)
