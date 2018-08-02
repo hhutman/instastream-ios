@@ -133,13 +133,14 @@ class LiveVideoViewController: UIViewController {
         //        }
         //        self.navigationController?.present(liveStartViCo, animated: true, completion: nil)
         
-        if !FBSDKAccessToken.current().hasGranted("publish_actions") || !FBSDKAccessToken.current().hasGranted("publish_video"){
-            self.fbLogin()
-        }else{
-            //            self.loadLFLiveKitView()
-            self.moveToLiveViewTimer()
-        }
-        
+//        if !FBSDKAccessToken.current().hasGranted("publish_actions") || !FBSDKAccessToken.current().hasGranted("publish_video"){
+//            self.fbLogin()
+//        }else{
+//            //            self.loadLFLiveKitView()
+//            self.moveToLiveViewTimer()
+//        }
+        self.moveToLiveViewTimer()
+
     }
     
     func moveToLiveViewTimer() {
