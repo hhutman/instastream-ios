@@ -265,7 +265,7 @@ class LiveVideoViewController: UIViewController {
         uploadFailed = true
         let size = BaseClass.shared().getFileSizeWithUrl(url: self.reqUrl!)
         print("FILE SIZE from showAlertForSizeExcess is \(size)")
-        let alertCo = UIAlertController(title: "Error", message: "Video file size exceeded", preferredStyle: .alert)
+        let alertCo = UIAlertController(title: "", message: "Video size exceeded can only be saved locally", preferredStyle: .alert)
         let btnOk = UIAlertAction(title: "OK", style: .default) { (_) in
             
             
@@ -584,8 +584,8 @@ class LiveVideoViewController: UIViewController {
     }
     
     func fbLogin() {
-        let loginManager = FBSDKLoginManager()
-        loginManager.logIn(withPublishPermissions: ["publish_actions","manage_pages","publish_pages","publish_video"], from: self) { (result, error) in
+        let loginManager = FBSDKLoginManager() //"publish_actions",
+        loginManager.logIn(withPublishPermissions: ["manage_pages","publish_pages","publish_video"], from: self) { (result, error) in
             if error != nil {
                 print("Error")
             } else if result?.isCancelled == true {

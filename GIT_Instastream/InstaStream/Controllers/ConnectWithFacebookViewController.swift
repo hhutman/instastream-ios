@@ -140,7 +140,7 @@ class ConnectWithFacebookViewController: UIViewController {
 //        fbLoginWrite()
 //        return
         //if the user is already logged in
-        if (FBSDKAccessToken.current()) != nil{
+        if (FBSDKAccessToken.current()) != nil {
             if BaseClass.shared().userId != nil {
                 if !FBSDKAccessToken.current().hasGranted("publish_actions") || !FBSDKAccessToken.current().hasGranted("publish_video") {
                     self.fbLoginWrite()
@@ -185,8 +185,8 @@ class ConnectWithFacebookViewController: UIViewController {
         if FBSDKAccessToken.current().hasGranted("publish_actions") || FBSDKAccessToken.current().hasGranted("publish_video") {
             self.moveToFBProfileDetailsView()
         }else{
-        let loginManager = FBSDKLoginManager()
-        loginManager.logIn(withPublishPermissions: ["publish_actions","manage_pages","publish_pages","publish_video"], from: self) { (result, error) in
+        let loginManager = FBSDKLoginManager() //"publish_actions",
+        loginManager.logIn(withPublishPermissions: ["manage_pages","publish_pages","publish_video"], from: self)  { (result, error) in
             if error != nil {
                 print("Error")
             } else if result?.isCancelled == true {

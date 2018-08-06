@@ -29,7 +29,7 @@ class BroadCastViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if uploadFailed {
-            shareButton.isUserInteractionEnabled = false
+            //shareButton.isUserInteractionEnabled = false
             shareButton.alpha = 0.5
         }
           cornerRadius()
@@ -183,10 +183,17 @@ class BroadCastViewController: UIViewController {
         //album()
         //getBroadcastVideos()
         //    self.collectionView.reloadData()
-        guard let streamUrl = self.streamUrlTime else {return}
-        let activityViewController = UIActivityViewController(activityItems: [streamUrl], applicationActivities: [])
-        // activityViewController.popoverPresentationController?.sourceView = self.view
-        self.present(activityViewController, animated: true, completion: nil)
+        if uploadFailed {
+            let alertCo = UIAlertController(title: "", message: "Video size exceeded can only be saved locally", preferredStyle: .alert)
+            let btnOk = UIAlertAction(title: "OK", style: .default)
+            alertCo.addAction(btnOk)
+            self.present(alertCo, animated: true, completion: nil)
+        }else {
+            guard let streamUrl = self.streamUrlTime else {return}
+            let activityViewController = UIActivityViewController(activityItems: ["Instastream Video ",streamUrl], applicationActivities: [])
+            // activityViewController.popoverPresentationController?.sourceView = self.view
+            self.present(activityViewController, animated: true, completion: nil)
+        }
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
