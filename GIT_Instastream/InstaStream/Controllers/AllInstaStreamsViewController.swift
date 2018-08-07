@@ -53,7 +53,7 @@ class AllInstaStreamsViewController: UIViewController {
                         let temp = result?["Broadcasts"] as! Array<Dictionary<String,Any>>
                         self.broadCastModelArr = BroadcastsModel.parseMultipleBroadcastsModels(array: temp)
                        // self.broadCastModelArr = self.broadCastModelArr?.filter({($0.url?.count != 0)})
-                        self.broadCastModelArr = self.broadCastModelArr?.sorted{ ($0.created_at)! > ($1.created_at)! }
+                       // self.broadCastModelArr = self.broadCastModelArr?.sorted{ ($0.created_at)! > ($1.created_at)! }
                         //  print(result as Any)
                         
                         DispatchQueue.main.async(execute:{
