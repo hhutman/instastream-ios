@@ -30,7 +30,7 @@ class BroadCastViewController: UIViewController {
         super.viewDidLoad()
         if uploadFailed {
             //shareButton.isUserInteractionEnabled = false
-            shareButton.alpha = 0.5
+            //shareButton.alpha = 0.5
         }
           cornerRadius()
           loadThumbnail()

@@ -3988,7 +3988,7 @@
                                     <action selector="finishTapped:" destination="gyA-Ja-Sqk" eventType="touchUpInside" id="6Os-WH-UqV"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5gm-oN-I6A">
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5gm-oN-I6A">
                                 <rect key="frame" x="23.5" y="395" width="46" height="46"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNF-Cx-yLH">

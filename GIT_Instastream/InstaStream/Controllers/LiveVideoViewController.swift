@@ -436,7 +436,7 @@ class LiveVideoViewController: UIViewController {
                 self.timerObj = Timer.scheduledTimer(withTimeInterval: 75, repeats: false, block: { (_) in
                     self.timeEnded = true
                     // self.stopLiveStreaming()
-                    self.showAlertForUser()
+                   // self.showAlertForUser()
                 })
                 self.commentsTimerObj = Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: { (_) in
                     self.getCommentsFromFB(id: self.fbStreamingId)
