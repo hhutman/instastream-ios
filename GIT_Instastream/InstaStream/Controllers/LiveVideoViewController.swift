@@ -45,6 +45,8 @@ class LiveVideoViewController: UIViewController {
     var alertResult : ((Bool) -> Void)?
     var timeEnded : Bool = false
     var uploadFailed : Bool = false
+    var liveStarted : Bool = false
+    var connectionError : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +59,7 @@ class LiveVideoViewController: UIViewController {
         //            loadLFLiveKitView()
         //        }
         updateUserInterface()
-        startLiveVideoTimer()
+//        startLiveVideoTimer()
         self.playLiveButton.isUserInteractionEnabled = false
         self.finishButton.isUserInteractionEnabled = false
         self.pauseBtn.isUserInteractionEnabled = false
@@ -80,12 +82,22 @@ class LiveVideoViewController: UIViewController {
         guard let status = Network.reachability?.status else { return }
         switch status {
         case .unreachable:
+            self.connectionError = true
             self.showToastWithMessage(strMessage: "please check your internet connection")
-            self.moveToPreviousScreen()
+            if self.liveStarted {
+                self.stopLiveStreaming()
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.moveToPreviousScreen()
+            }
         case .wifi:
             print("connected")
+            self.connectionError = false
+            self.startLiveVideoTimer()
         case .wwan:
             print("check wwan")
+            self.connectionError = false
+            self.startLiveVideoTimer()
             //view.backgroundColor = .yellow
         }
         print("Reachability Summary")
@@ -100,10 +112,15 @@ class LiveVideoViewController: UIViewController {
     }
     
     func moveToPreviousScreen() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+      //  DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+
             guard let viewcontrollers = self.navigationController?.viewControllers else{return}
             for controller in viewcontrollers {
-                if  let galleryVC = controller as? GalleryViewController {
+                if  let _ = BaseClass.shared().topViewController(controller: self) as? LiveStreamTimerViewController { //GalleryViewController
+                    self.dismiss(animated: true, completion: nil)
+                }
+                if  let galleryVC = controller as? FbProfileDetailsViewController { //GalleryViewController
+                    //self.dismiss(animated: true, completion: nil)
                     self.navigationController?.popToViewController(galleryVC, animated: true)
                 }
             }
@@ -113,7 +130,7 @@ class LiveVideoViewController: UIViewController {
             //                    self.navigationController!.popToViewController(galleryVC, animated: true)
             //                }
             //            })
-        }
+       // }
     }
     
     func startLiveVideoTimer()
@@ -169,9 +186,9 @@ class LiveVideoViewController: UIViewController {
     }
     
     func stopLiveStreaming() {
-        if self.timerObj != nil {
-            self.timerObj.invalidate()
-        }
+//        if self.timerObj != nil {
+//            self.timerObj.invalidate()
+//        }
         if self.commentsTimerObj != nil {
             self.commentsTimerObj.invalidate()
         }
@@ -185,7 +202,9 @@ class LiveVideoViewController: UIViewController {
         self.appDelegate.accessTokenFBPage = nil
         //      self.moviewWriter.finishRecording()
         // self.session = nil
-        uploadVideo(videoUrl: self.reqUrl!)
+        if connectionError == false {
+            uploadVideo(videoUrl: self.reqUrl!)
+        }
         //self.showAlertForUser()
         
         // self.moveToBroadcastsScreen()
@@ -407,7 +426,7 @@ class LiveVideoViewController: UIViewController {
         if FBSDKAccessToken.current() != nil {
             print("selected privacy in live \(self.livePrivacy)")
             FBLiveAPI.shared.startLive(privacy: livePrivacy) { result in
-                print(result)
+               // print(result)
                 self.playLiveButton.isUserInteractionEnabled = true
                 self.finishButton.isUserInteractionEnabled = true
                 self.pauseBtn.isUserInteractionEnabled = true
@@ -431,13 +450,14 @@ class LiveVideoViewController: UIViewController {
                 stream.url = reqUrl
                 print(stream.url)
                 self.session.startLive(stream)
+                self.liveStarted = true
                 self.fbStreamingId = (result as? NSDictionary)?.value(forKey: "id") as? String
                 self.getCommentsFromFB(id: self.fbStreamingId)
-                self.timerObj = Timer.scheduledTimer(withTimeInterval: 75, repeats: false, block: { (_) in
-                    self.timeEnded = true
-                    // self.stopLiveStreaming()
-                   // self.showAlertForUser()
-                })
+//                self.timerObj = Timer.scheduledTimer(withTimeInterval: 75, repeats: false, block: { (_) in
+//                    self.timeEnded = true
+//                    // self.stopLiveStreaming()
+//                   // self.showAlertForUser()
+//                })
                 self.commentsTimerObj = Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: { (_) in
                     self.getCommentsFromFB(id: self.fbStreamingId)
                 })

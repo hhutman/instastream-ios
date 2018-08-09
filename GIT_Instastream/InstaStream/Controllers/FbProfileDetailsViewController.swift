@@ -26,7 +26,7 @@ class FbProfileDetailsViewController: UIViewController {
         super.viewDidLoad()
         //Spinner.show(controller: self)
         NotificationCenter.default.addObserver(self, selector: #selector(statusManager), name: .flagsChanged, object: Network.reachability)
-        updateUserInterface()
+//        updateUserInterface()
         MBProgressHUD.showAdded(to: self.view, animated: true)
         getFBUserData()
         BaseClass.shared().setBaseUserObject()
@@ -34,6 +34,8 @@ class FbProfileDetailsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationBarTransparent()
+        updateUserInterface()
+
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -44,14 +46,19 @@ class FbProfileDetailsViewController: UIViewController {
         guard let status = Network.reachability?.status else { return }
         switch status {
         case .unreachable:
-            self.startInstaStream?.alpha = 0.5
-            self.startInstaStream?.isUserInteractionEnabled = false
+            self.connectionError = true
+//            self.startInstaStream?.alpha = 0.5
+//            self.startInstaStream?.isUserInteractionEnabled = false
         case .wifi:
+            self.connectionError = false
             self.getFBUserData()
             self.startInstaStream?.alpha = 1
             self.startInstaStream?.isUserInteractionEnabled = true
         case .wwan:
+            self.connectionError = false
+            self.getFBUserData()
             print("")
+           // self.showToastWithMessage(strMessage: "mobile data")
             //view.backgroundColor = .yellow
         }
         print("Reachability Summary")
@@ -123,10 +130,11 @@ class FbProfileDetailsViewController: UIViewController {
     }
     
     @IBAction func startInstaStreamTappped(_ sender: Any) {
-        //        if connectionError {
-        //            self.showToastWithMessage(strMessage: "please check your internet connection")
-        //            return
-        //        }
+        
+        if connectionError {
+            self.showToastWithMessage(strMessage: "please check your internet connection")
+            return
+        }
         
         Spinner.show(controller: self)
         
