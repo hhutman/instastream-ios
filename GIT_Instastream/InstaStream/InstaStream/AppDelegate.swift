@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application,
             didFinishLaunchingWithOptions: launchOptions
         )
-        Fabric.with([Crashlytics.self])
+     //   Fabric.with([Crashlytics.self])
         do {
             Network.reachability = try Reachability(hostname: "www.google.com")
             do {

@@ -197,7 +197,9 @@ class LiveVideoViewController: UIViewController {
         self.session.preView = nil
         self.session.saveLocalVideo = false
         self.session.saveLocalVideoPath = nil
-        self.streamImagesHelper.shouldStopStream()
+        if self.streamImagesHelper != nil {
+            self.streamImagesHelper.shouldStopStream()
+        }
         self.streamImagesHelper = nil
         self.appDelegate.accessTokenFBPage = nil
         //      self.moviewWriter.finishRecording()
@@ -220,6 +222,9 @@ class LiveVideoViewController: UIViewController {
 //    }
     
     func uploadVideo(videoUrl : URL) {
+        if self.connectionError == true {
+            return
+        }
         let size = BaseClass.shared().getFileSizeWithUrl(url: videoUrl)
         print("FILE SIZE from uploadvideo is \(size)")
         self.view.alpha = 0.3
@@ -255,7 +260,7 @@ class LiveVideoViewController: UIViewController {
                     }
                 }
                 var error = String.giveMeProperString(str: result?[Constants.KEY_MESSAGE]!)
-                if error.isEmpty{
+                if error.isEmpty {
                     error = Constants.MSG_ERROR
                     DispatchQueue.main.async(execute: {
                         self.showAlertForSizeExcess()
