@@ -19,6 +19,6 @@
 
 
 #import "StreamImagesHelper.h"
-
+#import "FBAppEvents.h"
 
 #endif /* InstaStreamBridge_Header_h */

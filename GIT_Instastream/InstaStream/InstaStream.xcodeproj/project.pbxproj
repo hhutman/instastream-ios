@@ -20,6 +20,7 @@
 		19E1121D20CE82160099C99F /* 4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 19E1121B20CE820B0099C99F /* 4.gif */; };
 		19E1121E20CE82160099C99F /* 3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 19E1121C20CE82110099C99F /* 3.gif */; };
 		19E1122020CE877B0099C99F /* FbProfileDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E1121F20CE877B0099C99F /* FbProfileDetailsViewController.swift */; };
+		DA3FE544215E714F00A41E4F /* FBAppEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = DA3FE543215E714E00A41E4F /* FBAppEvents.m */; };
 		DB07D2E420B28F77002B45AF /* LiveFacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB07D2E320B28F77002B45AF /* LiveFacebookViewController.swift */; };
 		DB13264920AF089C000D8B75 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB13264820AF089C000D8B75 /* Toast.swift */; };
 		DB13266220AF0910000D8B75 /* MarginAdjustable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB13264B20AF0909000D8B75 /* MarginAdjustable.swift */; };
@@ -119,6 +120,8 @@
 		23A441990975B02F167FBB48 /* Pods-InstaStream.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaStream.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InstaStream/Pods-InstaStream.debug.xcconfig"; sourceTree = "<group>"; };
 		C2E4F181152D9F7CE3A087FA /* libPods-InstaStream.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InstaStream.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6BA11CCD0D4E92A0DA1E5A8 /* Pods-InstaStream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaStream.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaStream/Pods-InstaStream.release.xcconfig"; sourceTree = "<group>"; };
+		DA3FE542215E714E00A41E4F /* FBAppEvents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBAppEvents.h; sourceTree = "<group>"; };
+		DA3FE543215E714E00A41E4F /* FBAppEvents.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBAppEvents.m; sourceTree = "<group>"; };
 		DB07D2E320B28F77002B45AF /* LiveFacebookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveFacebookViewController.swift; sourceTree = "<group>"; };
 		DB13264820AF089C000D8B75 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		DB13264B20AF0909000D8B75 /* MarginAdjustable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarginAdjustable.swift; sourceTree = "<group>"; };
@@ -362,6 +365,8 @@
 				DB5BE10D20A959410088D59A /* Spinner.swift */,
 				DBDC624C20B5842F00CFCFCE /* StreamImagesHelper.h */,
 				DBDC624920B5842C00CFCFCE /* StreamImagesHelper.m */,
+				DA3FE542215E714E00A41E4F /* FBAppEvents.h */,
+				DA3FE543215E714E00A41E4F /* FBAppEvents.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -635,6 +640,7 @@
 				DB5BE12E20A959A30088D59A /* DemoScreenTwoViewController.swift in Sources */,
 				DB8F6ECA207230DE00FB8C04 /* UIView+Blur.swift in Sources */,
 				DB8F6EB320722C4200FB8C04 /* FacebookLiveViewController.swift in Sources */,
+				DA3FE544215E714F00A41E4F /* FBAppEvents.m in Sources */,
 				DBDC625120B5843300CFCFCE /* StreamImagesHelper.m in Sources */,
 				DB5BE12D20A959A30088D59A /* LiveVideoTableViewCell.swift in Sources */,
 				DBBB472B2072026A00BC3117 /* ViewController.swift in Sources */,

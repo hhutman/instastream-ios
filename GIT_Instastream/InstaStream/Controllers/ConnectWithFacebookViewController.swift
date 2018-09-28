@@ -94,6 +94,7 @@ class ConnectWithFacebookViewController: UIViewController {
                         DataBaseHelper.shared().addOrUpdaeUserObject(userDetails: userDetails["user"] as! Dictionary<String, Any>)
                         BaseClass.shared().setBaseUserObject()
                         self.showToastWithMessage(strMessage: "Registration success")
+                        FBAppEvents.sharedController().logCompletedRegistrationEvent("via Facebook")
                         //to view the toast message
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                            // self.moveToFBProfileDetailsView()
