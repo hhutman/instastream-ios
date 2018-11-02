@@ -23,12 +23,25 @@ PODS:
   - Crashlytics (3.10.3):
     - Fabric (~> 1.7.8)
   - Fabric (1.7.8)
-  - FBSDKCoreKit (4.36.0):
+  - FacebookSDK (4.37.0):
     - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.36.0):
-    - FBSDKCoreKit
-  - FBSDKShareKit (4.36.0):
-    - FBSDKCoreKit (~> 4.36.0)
+    - FacebookSDK/CoreKit (= 4.37.0)
+    - FacebookSDK/MarketingKit (= 4.37.0)
+  - FacebookSDK/CoreKit (4.37.0):
+    - Bolts (~> 1.7)
+  - FacebookSDK/LoginKit (4.37.0):
+    - Bolts (~> 1.7)
+    - FacebookSDK/CoreKit
+  - FacebookSDK/MarketingKit (4.37.0):
+    - Bolts (~> 1.7)
+    - FacebookSDK/CoreKit
+  - FacebookSDK/PlacesKit (4.37.0):
+    - Bolts (~> 1.7)
+    - FacebookSDK/CoreKit
+  - FacebookSDK/ShareKit (4.37.0):
+    - Bolts (~> 1.7)
+    - FacebookSDK/CoreKit
+  - FBSDKMessengerShareKit (1.3.2)
   - glm (0.9.7.1)
   - GPUImage (0.1.7)
   - LFLiveKit (2.6)
@@ -41,8 +54,11 @@ PODS:
 DEPENDENCIES:
   - Crashlytics
   - Fabric
-  - FBSDKLoginKit (~> 4.36.0)
-  - FBSDKShareKit (~> 4.36.0)
+  - FacebookSDK
+  - FacebookSDK/LoginKit
+  - FacebookSDK/PlacesKit
+  - FacebookSDK/ShareKit
+  - FBSDKMessengerShareKit
   - glm (from `https://github.com/maxcampolo/glm.git`)
   - GPUImage (from `https://github.com/BradLarson/GPUImage.git`, commit `167b0389bc6e9dc4bb0121550f91d8d5d6412c53`)
   - LFLiveKit (from `../LFLiveKit`)
@@ -54,9 +70,8 @@ SPEC REPOS:
     - boost
     - Crashlytics
     - Fabric
-    - FBSDKCoreKit
-    - FBSDKLoginKit
-    - FBSDKShareKit
+    - FacebookSDK
+    - FBSDKMessengerShareKit
     - UriParser-cpp
 
 EXTERNAL SOURCES:
@@ -87,15 +102,14 @@ SPEC CHECKSUMS:
   boost: 6c5c8d8daef26ac83c1e1c00ad14de62b80161d7
   Crashlytics: 2aea305161a2122492698c75af27f2b98aa49a25
   Fabric: fba4684a95df789565b0b27fc5b6e68f1755af32
-  FBSDKCoreKit: 3b8e6570eedb443f9fc4af196a7bf39f18e3a3d8
-  FBSDKLoginKit: 8bccb6064708ab2f4251a7fc4e3b6d8d00ad91ba
-  FBSDKShareKit: 7090fdd55c39b03941efddb64c83a64ff6b3949f
+  FacebookSDK: aac401153feabdedd7dfeb46acaccad7ac53fb69
+  FBSDKMessengerShareKit: 41c0b1a667d685c9433f993eb9611b3d5074e1cb
   glm: e83c95e7a6359bdaeb23e6089ac826dd62c5c09f
   GPUImage: bd7e201b9aa91e85f401ed7a6d9867a07a404693
   LFLiveKit: e511b90275d707c76c83158c4640d0b62b361d2d
   UriParser-cpp: cbbe00080ee432ec4833dca863a7fc83adc9b01a
   VideoCore: 5d8ea99d900089ee016bb87485912b0286e07650
 
-PODFILE CHECKSUM: d55f2ee82583860d2d2c02ab7397be930ca884ca
+PODFILE CHECKSUM: 19a38a19f3e85e7b7ef45aec7cddcc3435ab435f
 
 COCOAPODS: 1.5.3
