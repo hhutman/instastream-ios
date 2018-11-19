@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "499861846F0F75059CC4B62FF186A2DA"
+               BlueprintIdentifier = "C7FF2C0C4443A6840EAC149380A7C053"
                BlueprintName = "Pods-InstaStream"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libPods-InstaStream.a">

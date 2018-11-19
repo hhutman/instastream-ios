@@ -1,0 +1,1 @@
+../../../../FacebookSDK/FacebookSDKs-iOS-universal-4.37.0/iOS/FBSDKShareKit.framework/Headers/FBSDKShareMessengerOpenGraphMusicTemplateContent.h

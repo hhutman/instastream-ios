@@ -45,6 +45,8 @@
 	<string>1263107127070151</string>
 	<key>FacebookDisplayName</key>
 	<string>Telefon Projekt</string>
+	<key>FacebookCodelessDebugLogEnabled</key>
+	<true/>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>

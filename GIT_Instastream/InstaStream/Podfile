@@ -3,8 +3,18 @@
 
 
 target 'InstaStream' do
-pod 'FBSDKShareKit', '~> 4.36.0'
-pod 'FBSDKLoginKit', '~> 4.36.0'
+    
+    
+    #pod 'FBSDKShareKit', '~> 4.37.0'
+    #pod 'FBSDKLoginKit', '~> 4.37.0'
+    #pod 'FBSDKMarketingKit'
+
+    pod 'FacebookSDK'
+    pod 'FacebookSDK/LoginKit'
+    pod 'FacebookSDK/ShareKit'
+    pod 'FacebookSDK/PlacesKit'
+    pod 'FBSDKMessengerShareKit'
+
 #pod 'FacebookLogin'
 pod 'VideoCore/Swift', :git => 'https://github.com/maxcampolo/VideoCore.git', :branch => 'update_headers'
 pod 'glm', :git => 'https://github.com/maxcampolo/glm.git'
